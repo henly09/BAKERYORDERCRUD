@@ -1,5 +1,8 @@
 import React, {useState, useEffect, Component } from 'react';
 import { render } from 'react-dom';
+// Ownded and Created by : Montera, John Henly A.
+// FB: fb.com/mhax.ter
+// Gmail: monterahens@gmail.com 
 import { 
     StyleSheet, 
     Text,
@@ -11,7 +14,7 @@ import {
     Button,
     ImageBackground
 } from 'react-native';
-import school from '../assets/school.png';
+import bg from '../assets/bg.jpg';
 
 export default class StudentSearch extends Component {
 
@@ -19,26 +22,26 @@ export default class StudentSearch extends Component {
     {
         super(props);
         this.state={
-            StudentID:'',
-            student_name:'',
-            student_year:'',
-            student_course:'',
-            student_age:'',
-            student_email:''
+            ID:'',
+            price:'',
+            ordered:'',
+            pieces:'',
+            Type_:'',
+            address:''
         };
     }
 
     SearchRecord=()=>
     {
-        var StudentID=this.state.StudentID;
+        var ID=this.state.ID;
 
-        if(StudentID.length==0)
+        if(ID.length==0)
         {
             alert("Required Field is Missing");
         }
         else
         {
-            var SearchAPIURL="http://10.0.2.2:80/Final_Proj/search.php";
+            var SearchAPIURL="http://10.0.2.2:80/bakery2/search.php";
 
             var header={
                     'Accept':'application/json',
@@ -46,7 +49,7 @@ export default class StudentSearch extends Component {
             };
 
             var Data={
-                StudentID:StudentID
+                ID:ID
             };
 
             fetch(
@@ -59,15 +62,15 @@ export default class StudentSearch extends Component {
             )
             .then((response)=>response.json())
             .then((response)=>{
-                this.setState({StudentID:response[0].StudentID});
-                this.setState({student_name:response[0].student_name});
-                this.setState({student_year:response[0].student_year});
-                this.setState({student_course:response[0].student_course});
-                this.setState({student_age:response[0].student_age});
-                this.setState({student_email:response[0].student_email});
+                this.setState({ID:response[0].ID});
+                this.setState({price:response[0].price});
+                this.setState({ordered:response[0].ordered});
+                this.setState({pieces:response[0].pieces});
+                this.setState({Type_:response[0].Type_});
+                this.setState({address:response[0].address});
             })
             .catch((error)=>{
-                alert("Error"+error);
+                alert("Error:"+error);
             })
         }
     }
@@ -76,7 +79,7 @@ export default class StudentSearch extends Component {
     return (
         <View>
                 <ImageBackground 
-                source={school} 
+                source={bg} 
                 resizeMode="cover" 
                 style={{
                 height: '100%',
@@ -86,11 +89,11 @@ export default class StudentSearch extends Component {
         <View style={styles.viewStyle}>
 
             <TextInput
-                placeholder={"Enter Student ID#"}
+                placeholder={"Enter Order ID#"}
                 placeholderTextColor={"#000000"}
                 keyboardType={"numeric"}
                 style={styles.txtStyle}
-                onChangeText={StudentID=>this.setState({StudentID})}
+                onChangeText={ID=>this.setState({ID})}
             />
             <Button
                 title={"Find Record"}
@@ -103,27 +106,27 @@ export default class StudentSearch extends Component {
 
             <TextInput
             style={styles.txtStyle}
-            value={"Name: "+this.state.student_name}
+            value={"Price: "+this.state.price}
             />
 
             <TextInput
             style={styles.txtStyle}
-            value={"Year: "+this.state.student_year}
+            value={"Ordered: "+this.state.ordered}
             />
 
             <TextInput
             style={styles.txtStyle}
-            value={"Course: "+this.state.student_course}
+            value={"Pieces: "+this.state.pieces}
             />
 
             <TextInput
             style={styles.txtStyle}
-            value={"Age: "+this.state.student_age}
+            value={"Delivery Type: "+this.state.Type_}
             />
 
             <TextInput
             style={styles.txtStyle}
-            value={"Email: "+this.state.student_email}
+            value={"Address: "+this.state.address}
             />
 
 

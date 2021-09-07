@@ -1,4 +1,7 @@
 // In App.js in a new project
+// Ownded and Created by : Montera, John Henly A.
+// FB: fb.com/mhax.ter
+// Gmail: monterahens@gmail.com 
 
 import * as React from 'react';
 import { View, Text, Button, Image, ImageBackground } from 'react-native';
@@ -6,31 +9,30 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ModalDropdown from 'react-native-modal-dropdown';
 
-import StudentInsert from './scr/StudentInsert.js';
-import StudentSearch from './scr/StudentSearch.js';
-import StudentDelete from './scr/StudentDelete.js';
-import StudentList from './scr/StudentList.js';
+import BreadInsert from './scr/BreadInsert.js';
+import BreadSearch from './scr/BreadSearch.js';
+import BreadDelete from './scr/BreadDelete.js';
+import BreadList from './scr/BreadList.js';
 import dash from './assets/dash.png';
-import hcdclogo from './assets/hcdclogo.png';
-import school from './assets/school.png';
+import logo from './assets/logo.png';
+import bg2 from './assets/bg2.png';
 
 
 function HomeScreen({ navigation }) {
 
 
-  const pages = ['Insert', 'Search','Delete', 'StudentList'];
+  const pages = ['Insert', 'Search','Delete', 'BreadList'];
 
   return (
     <View>
      <ImageBackground 
-     source={school} 
-     resizeMode="cover" 
-     style={{
-       height: '100%',
-       width: '100%'
+                source={bg2} 
+                resizeMode="cover" 
+                style={{
+                height: '100%',
+                width: '100%'
      }}>
-    
-    
+
       <ModalDropdown 
         style={{
         top: 35,
@@ -38,7 +40,7 @@ function HomeScreen({ navigation }) {
         right: 10,
         position: 'relative',
       }}
-        options={['Insert', 'Search','Delete', 'Student List']}
+        options={['Insert', 'Search','Delete', 'Bread List']}
         animated
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
@@ -83,7 +85,7 @@ function HomeScreen({ navigation }) {
         textShadowOffset:{width: 10, height: 10},
         textShadowRadius:20,
         textAlign: 'center'
-      }}> HOLY CROSS OF {"\n"} DAVAO COLLEGE </Text>
+      }}> BAKERY {"\n"} ORDERING SYSTEM </Text>
 
         <Text style={{
         fontSize: 20,
@@ -98,10 +100,10 @@ function HomeScreen({ navigation }) {
         textShadowOffset:{width: 10, height: 10},
         textShadowRadius:20,
         textAlign: 'center'
-      }}> Database Student Management™ </Text>
+      }}> System Database for Delivery Management™ </Text>
 
         <Image 
-         source= {hcdclogo}
+         source= {logo}
          style={{ 
          height: 180,
          width: 180,
@@ -137,8 +139,8 @@ function HomeScreen({ navigation }) {
       />
 
       <Button
-        title={"Student List"}
-        onPress={() => navigation.navigate('StudentList')}
+        title={"Bread List"}
+        onPress={() => navigation.navigate('BreadList')}
       />
 
       </View>
@@ -164,7 +166,7 @@ export default function App() {
 
         <Stack.Screen 
         name="Delete" 
-        component={StudentDelete}
+        component={BreadDelete}
         options = {{
             headerShown: false
         }}
@@ -172,7 +174,7 @@ export default function App() {
 
          <Stack.Screen 
         name="Search" 
-        component={StudentSearch}
+        component={BreadSearch}
         options = {{
             headerShown: false
         }}
@@ -180,15 +182,15 @@ export default function App() {
 
          <Stack.Screen 
         name="Insert" 
-        component={StudentInsert}
+        component={BreadInsert}
         options = {{
             headerShown: false
         }}
         />
 
         <Stack.Screen 
-        name="StudentList" 
-        component={StudentList}
+        name="BreadList" 
+        component={BreadList}
         options = {{
             headerShown: false
         }}

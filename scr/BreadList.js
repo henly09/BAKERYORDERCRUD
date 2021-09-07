@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import school from '../assets/school.png';
+import bg2 from '../assets/bg2.png';
 import { StyleSheet, FlatList, Text, View, ActivityIndicator, TouchableOpacity, ImageBackground} from 'react-native';
-
+// Ownded and Created by : Montera, John Henly A.
+// FB: fb.com/mhax.ter
+// Gmail: monterahens@gmail.com 
 export default class StudentList extends Component {
 
     constructor()
@@ -14,7 +16,7 @@ export default class StudentList extends Component {
     }
 
     componentDidMount() {
-        return fetch('http://10.0.2.2:80/Final_Proj/displayall.php')
+        return fetch('http://10.0.2.2:80/bakery2/display.php')
           .then((response) => response.json())
           .then((responseJson) => {
             this.setState({
@@ -28,7 +30,7 @@ export default class StudentList extends Component {
          
         <TouchableOpacity onPress={() => alert(item.body)}>
             <View style={styles.item}>
-                <Text style={styles.text}>ID#:{item.StudentID}, Name:{item.student_name}, Course:{item.student_course}</Text>
+                <Text style={styles.text}>ID#:{item.ID}, Name:{item.ordered}, Course:{item.Type_}</Text>
             </View>
         </TouchableOpacity>
      );
@@ -47,7 +49,7 @@ export default class StudentList extends Component {
             return (
               <View>
                 <ImageBackground 
-                source={school} 
+                source={bg2} 
                 resizeMode="cover" 
                 style={{
                 height: '100%',
@@ -66,7 +68,7 @@ export default class StudentList extends Component {
         textShadowColor:'#0c0d0e',
         textShadowOffset:{width: 10, height: 10},
         textShadowRadius:20,
-      }}> STUDENT </Text>         
+      }}> Order </Text>         
 
         <Text style={{
         fontSize: 30,
@@ -80,7 +82,7 @@ export default class StudentList extends Component {
         textShadowColor:'#0c0d0e',
         textShadowOffset:{width: 10, height: 10},
         textShadowRadius:20,
-      }}> DATABASE </Text>
+      }}> List </Text>
                 <View style={styles.container}>     
                        <FlatList
                           style={{padding: 5}}
