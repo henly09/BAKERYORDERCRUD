@@ -6,7 +6,7 @@ import ModalDropdown from 'react-native-modal-dropdown';
 // Ownded and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
-export default class StudentInsert extends Component
+export default class BreadInsert extends Component
 {
     constructor(props)
     {
@@ -155,6 +155,7 @@ export default class StudentInsert extends Component
             marginBottom: 10,
             backgroundColor: 'white',
       }}
+      isFullWidth={true}
         options={[
             'Pandesal', 'Loaf Bread','Choco Lanay', 'Spanish Bread',
             'Turta','Rye Bread','Humberger Bun','Breadsticks']}
@@ -167,15 +168,17 @@ export default class StudentInsert extends Component
           width: '95%',
           marginTop: -45,
           marginLeft: -11,
-          alignItems: 'center',
-          justifyContent: 'flex-start',
+          paddingLeft: 5
         }}
-        dropdownTextProps={{
-          fontSize: 20,
-          fontStyle: "italic",
-          fontFamily: 'sans-serif',
-          fontWeight: 'bold'
+        defaultTextStyle={{
+            fontSize: 14
         }}
+        dropdownTextStyle={{
+            fontSize: 15,
+            fontStyle: "italic",
+            fontFamily: 'sans-serif',
+            fontWeight: 'bold',
+          }}
         onSelect = {(ordered)=> this.setState({ordered})}/>
                 
                
@@ -210,14 +213,13 @@ export default class StudentInsert extends Component
           width: '95%',
           marginTop: -45,
           marginLeft: -11,
-          alignItems: 'center',
-          justifyContent: 'flex-start',
+          paddingLeft: 5
         }}
         dropdownTextStyle={{
-          fontSize: 20,
-          fontStyle: "italic",
-          fontFamily: 'sans-serif',
-          fontWeight: 'bold'
+            fontSize: 15,
+            fontStyle: "italic",
+            fontFamily: 'sans-serif',
+            fontWeight: 'bold',
         }}
         onSelect = {(Type_)=> this.setState({Type_})}/>
 

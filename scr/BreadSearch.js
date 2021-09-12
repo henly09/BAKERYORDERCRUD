@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import bg from '../assets/bg.jpg';
 
-export default class StudentSearch extends Component {
+export default class BreadSearch extends Component {
 
     constructor(props)
     {

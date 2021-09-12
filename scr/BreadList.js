@@ -4,7 +4,7 @@ import { StyleSheet, FlatList, Text, View, ActivityIndicator, TouchableOpacity, 
 // Ownded and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
-export default class StudentList extends Component {
+export default class BreadList extends Component {
 
     constructor()
     {

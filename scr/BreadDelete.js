@@ -17,13 +17,13 @@ import {
 } from 'react-native';
 import bg from '../assets/bg.jpg';
 
-export default class StudentDelete extends Component {
+export default class BreadDelete extends Component {
 
     constructor(props)
     {
         super(props);
         this.state={
-            StudentID:''
+            ID:''
         }
         this.state = { 
             isLoading: true,
