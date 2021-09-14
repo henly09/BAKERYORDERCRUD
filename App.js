@@ -8,6 +8,7 @@ import { View, Text, Button, Image, ImageBackground } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ModalDropdown from 'react-native-modal-dropdown';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import BreadInsert from './scr/BreadInsert.js';
 import BreadSearch from './scr/BreadSearch.js';
@@ -16,6 +17,12 @@ import BreadList from './scr/BreadList.js';
 import dash from './assets/dash.png';
 import logo from './assets/logo.png';
 import bg2 from './assets/bg2.png';
+import home from './assets/home.png';
+import insert from './assets/insert.png';
+import search from './assets/search.png';
+import deleted from './assets/delete.png';
+import list from './assets/list.png';
+
 
 
 function HomeScreen({ navigation }) {
@@ -84,7 +91,7 @@ function HomeScreen({ navigation }) {
         textShadowColor:'#0c0d0e',
         textShadowOffset:{width: 10, height: 10},
         textShadowRadius:20,
-        textAlign: 'center'
+        textAlign: 'center',
       }}> BAKERY {"\n"} ORDERING SYSTEM </Text>
 
         <Text style={{
@@ -150,53 +157,110 @@ function HomeScreen({ navigation }) {
 }
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
+      <Tab.Navigator
+    initialRouteName="Home"
+      screenOptions={{
+        tabBarStyle: { 
+          position: 'absolute',
+          backgroundColor: '#925d32',
+          borderTopLeftRadius: 5,
+          borderTopRightRadius: 5,
+          height: 60,
+          width: "100%"
+        },
+        tabBarShowLabel: false,
+        showElevation: true
+      }}>
 
-      <Stack.Screen 
-        name="HomeScreen" 
-        component={HomeScreen}
-        options = {{
-            headerShown: false
-        }}
-        />
+      <Tab.Screen name="HomeScreen" 
+      component={HomeScreen}  
+      options = {{
+            headerShown: false,
+            tabBarIcon: ({focused}) => (
+              <View>
+                <Image
+                source={home}
+                resizeMode='contain'
+                style={{
+                  width:25,
+                  height:25,
+                }}
+                />
+              </View>
+            ),
+        }} />
 
-        <Stack.Screen 
-        name="Delete" 
-        component={BreadDelete}
-        options = {{
-            headerShown: false
-        }}
-        />
+      <Tab.Screen name="Insert" component={BreadInsert}  options = {{
+            headerShown: false,
+            tabBarIcon: ({focused}) => (
+              <View>
+                <Image
+                source={insert}
+                resizeMode='contain'
+                style={{
+                  width:25,
+                  height:25,
+                }}
+                />
+              </View>
+            ),
+        }}/>
 
-         <Stack.Screen 
-        name="Search" 
-        component={BreadSearch}
-        options = {{
-            headerShown: false
-        }}
-        />
+      <Tab.Screen name="Search" component={BreadSearch}  options = {{
+            headerShown: false,
+            tabBarIcon: ({focused}) => (
+              <View>
+                <Image
+                source={search}
+                resizeMode='contain'
+                style={{
+                  width:25,
+                  height:25,
+                }}
+                />
+              </View>
+            ),
+        }}/>
+      <Tab.Screen name="Delete" component={BreadDelete}  options = {{
+            headerShown: false,
+            tabBarIcon: ({focused}) => (
+              <View>
+                <Image
+                source={deleted}
+                resizeMode='contain'
+                style={{
+                  width:25,
+                  height:25,
+                }}
+                />
+              </View>
+            ),
+        }}/>
 
-         <Stack.Screen 
-        name="Insert" 
-        component={BreadInsert}
-        options = {{
-            headerShown: false
-        }}
-        />
-
-        <Stack.Screen 
-        name="BreadList" 
-        component={BreadList}
-        options = {{
-            headerShown: false
-        }}
-        />
+    
+      <Tab.Screen name="BreadList" component={BreadList}  options = {{
+            headerShown: false,
+            tabBarIcon: ({focused}) => (    
+              <View>
+                <Image
+                source={list}
+                resizeMode='contain'
+                style={{
+                  width:25,
+                  height:25,
+                }}
+                />
+              </View>
+            ),
+              
+        }}/>
         
-      </Stack.Navigator>
+    </Tab.Navigator>
     </NavigationContainer>
     
   );

@@ -106,7 +106,7 @@ export default class BreadList extends Component {
                     backgroundColor: '#F5FCFF',
                     textAlign: 'center',
                     top:180,
-                    height: '70%',
+                    height: '68%',
                     width: '90%',
                     left: '5%',
                     padding: 20
