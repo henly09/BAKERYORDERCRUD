@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
-import { View, TextInput, Button, StyleSheet, ImageBackground } from 'react-native';
+import { View, TextInput, Button, StyleSheet, ImageBackground, Text } from 'react-native';
 import bg from '../assets/bg.jpg';
 import ModalDropdown from 'react-native-modal-dropdown';
+import DatePicker from 'react-native-datepicker';
 
 // Ownded and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
@@ -21,7 +22,8 @@ export default class BreadInsert extends Component
             fullname:'',
             email:'',
             phonenumber:'',
-            address:''
+            address:'',
+            date:'',
         };
     }
 
@@ -71,7 +73,7 @@ export default class BreadInsert extends Component
             else{
                 Type_ = "Pickup";}
  
-        var orderdate=this.state.orderdate;
+        var orderdate=this.state.date;
         var ordertime=this.state.ordertime;
         var fullname=this.state.fullname;
         var email=this.state.email;
@@ -223,12 +225,34 @@ export default class BreadInsert extends Component
         }}
         onSelect = {(Type_)=> this.setState({Type_})}/>
 
-                 <TextInput
-                    placeholder={"Date"}
-                    placeholderTextColor={"black"}
-                    style={styles.txtStyle}
-                    onChangeText={orderdate=>this.setState({orderdate})}
-                />
+<View style= {{ flexDirection: 'row', justifyContent: 'space-evenly'}}>
+  <Text style={styles.txtStyle5}> Date: </Text> 
+  <DatePicker
+        style={styles.txtStyle4}
+        date={this.state.date}
+        mode="date"
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        minDate="1950-05-01"
+        maxDate="2999-06-01"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        customStyles={{
+          dateIcon: {
+            position: 'absolute',
+            left: 0,
+            top: 4,
+            marginLeft: 0
+          },
+          dateInput: {
+            marginLeft: 36
+          }
+          // ... You can check the source to find the other keys.
+        }}
+        onDateChange={(date) => {this.setState({date: date})}}
+        useNativeDriver= {true}
+      />
+</View>
                 <TextInput
                     placeholder={"Time"}
                     placeholderTextColor={"black"}
@@ -288,7 +312,29 @@ const styles=StyleSheet.create({
         padding: 10,
         marginBottom: 10,
         backgroundColor: 'white',
-    }
+    },
+    txtStyle4:{
+        borderBottomWidth: 1,
+        borderBottomColor: 'black',
+        marginBottom: 10,
+        padding: 0,
+        width: '59%',
+        backgroundColor: 'white',
+        
+    },
+
+    txtStyle5:{
+        borderBottomWidth: 1,
+        borderBottomColor: 'black',
+        padding: 11,
+        marginBottom: 10,
+        width: '39%',
+        backgroundColor: 'white',
+        alignSelf: 'center',
+        textAlign: 'center',
+        fontSize: 13
+        
+    },
 
 
 });
