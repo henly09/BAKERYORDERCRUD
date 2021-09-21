@@ -184,7 +184,10 @@ const styles=StyleSheet.create({
         },
 
     text:{
-            fontSize: 15
+            fontSize: 15,
+            fontFamily: 'sans-serif',
+            fontWeight: 'bold',
+            fontStyle: "italic",
         }
 
 

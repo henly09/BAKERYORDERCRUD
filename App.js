@@ -129,23 +129,27 @@ function HomeScreen({ navigation }) {
         }}>
 
       <Button
+      color="#925d32"
         title={"Insert"}
         onPress={() => navigation.navigate('Insert')}
        
       />
 
       <Button
+      color="#925d32"
         title={"Search"}
         onPress={() => navigation.navigate('Search')}
        
       />
 
       <Button
+      color="#925d32"
         title={"Delete"}
         onPress={() => navigation.navigate('Delete')}
       />
 
       <Button
+        color="#925d32"
         title={"Bread List"}
         onPress={() => navigation.navigate('BreadList')}
       />
