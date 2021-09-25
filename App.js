@@ -4,16 +4,17 @@
 // Gmail: monterahens@gmail.com 
 
 import * as React from 'react';
-import { View, Text, Button, Image, ImageBackground } from 'react-native';
+import { View, Text, Button, Image, ImageBackground,TouchableOpacity, TouchableNativeFeedback } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ModalDropdown from 'react-native-modal-dropdown';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 
 import BreadInsert from './scr/BreadInsert.js';
 import BreadSearch from './scr/BreadSearch.js';
 import BreadDelete from './scr/BreadDelete.js';
 import BreadList from './scr/BreadList.js';
+import BreadAbout from './scr/BreadAbout';
 import dash from './assets/dash.png';
 import logo from './assets/logo.png';
 import bg2 from './assets/bg2.png';
@@ -22,13 +23,13 @@ import insert from './assets/insert.png';
 import search from './assets/search.png';
 import deleted from './assets/delete.png';
 import list from './assets/list.png';
-
+import about from './assets/about.png';
 
 
 function HomeScreen({ navigation }) {
 
 
-  const pages = ['Insert', 'Search','Delete', 'BreadList'];
+  const pages = ['Insert', 'Search','Delete', 'BreadList','BreadAbout'];
 
   return (
     <View>
@@ -47,7 +48,7 @@ function HomeScreen({ navigation }) {
         right: 10,
         position: 'relative',
       }}
-        options={['Insert', 'Search','Delete', 'Bread List']}
+        options={['Insert', 'Search','Delete', 'Bread List','Menu']}
         animated
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
@@ -120,8 +121,6 @@ function HomeScreen({ navigation }) {
          resizeMode: 'center',
          }}/>
 
-     
- 
       <View style={{ 
         flexDirection: 'row', 
         top: '100%', 
@@ -129,29 +128,33 @@ function HomeScreen({ navigation }) {
         }}>
 
       <Button
-      color="#925d32"
+      color="#382624"
         title={"Insert"}
         onPress={() => navigation.navigate('Insert')}
-       
       />
 
       <Button
-      color="#925d32"
+      color="#382624"
         title={"Search"}
         onPress={() => navigation.navigate('Search')}
-       
       />
 
       <Button
-      color="#925d32"
+      color="#382624"
         title={"Delete"}
         onPress={() => navigation.navigate('Delete')}
       />
 
       <Button
-        color="#925d32"
+        color="#382624"
         title={"Bread List"}
         onPress={() => navigation.navigate('BreadList')}
+      />
+
+      <Button
+        color="#382624"
+        title={"Menu"}
+        onPress={() => navigation.navigate('BreadAbout')}
       />
 
       </View>
@@ -160,14 +163,14 @@ function HomeScreen({ navigation }) {
   );
 }
 
-const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
 
 export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-    initialRouteName="Home"
+    initialRouteName="HomeScreen"
       screenOptions={{
         tabBarStyle: { 
           position: 'absolute',
@@ -178,7 +181,7 @@ export default function App() {
           width: "100%"
         },
         tabBarShowLabel: false,
-        showElevation: true
+        showElevation: true,   
       }}>
 
       <Tab.Screen name="HomeScreen" 
@@ -213,6 +216,24 @@ export default function App() {
                 />
               </View>
             ),
+        }}/>
+
+        
+<Tab.Screen name="BreadAbout" component={BreadAbout}  options = {{
+            headerShown: false,
+            tabBarIcon: ({focused}) => (    
+              <View>
+                <Image
+                source={about}
+                resizeMode='contain'
+                style={{
+                  width:25,
+                  height:25,
+                }}
+                />
+              </View>
+            ),
+              
         }}/>
 
       <Tab.Screen name="Search" component={BreadSearch}  options = {{
@@ -263,6 +284,7 @@ export default function App() {
             ),
               
         }}/>
+
         
     </Tab.Navigator>
     </NavigationContainer>

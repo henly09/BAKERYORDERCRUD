@@ -35,35 +35,35 @@ export default class BreadInsert extends Component
         var price = 0;
 
         if (ordered == 0){
-            ordered = "Pandesal";
+            ordered = "Bagels";
             price = 2 * pieces;}
 
             if (ordered == 1){
-                ordered = "Loaf Bread";
+                ordered = "Pretzel";
                 price = 25 * pieces;}
 
                 if (ordered == 2){
-                    ordered = "Choco Lanay";
+                    ordered = "Breadsticks";
                     price = 3 * pieces;}
 
                     if (ordered == 3){
-                        ordered = "Spanish Bread";
+                        ordered = "Croissant";
                         price = 5 * pieces;}
 
                         if (ordered == 4){
-                            ordered = "Turta";
+                            ordered = "White Bread";
                             price = 5 * pieces;}
 
                             if (ordered == 5){
-                                ordered = "Rye Bread";
+                                ordered = "Wheat Bread";
                                 price = 5 * pieces;}
 
                                 if (ordered == 6){
-                                    ordered = "Humburger Bun";
+                                    ordered = "Whole Grain Bread";
                                     price = 10 * pieces;}
 
                                     if (ordered == 7){
-                                        ordered = "Breadsticks";
+                                        ordered = "Rye Bread";
                                         price = 5 * pieces;}    
 
         var Type_=this.state.Type_;
@@ -82,14 +82,14 @@ export default class BreadInsert extends Component
 
         if( 
             ordered==null || 
-            pieces.length==0 || 
+            pieces==null || 
             Type_==null || 
-            orderdate.length ==0 ||
-            ordertime.length==0 || 
-            fullname.length==0 || 
-            email.length==0 || 
-            phonenumber.length==0 || 
-            address.length ==0)
+            orderdate ==null ||
+            ordertime==null || 
+            fullname==null || 
+            email==null || 
+            phonenumber==null || 
+            address ==null)
         {
             alert("Required Field is Missing");
         }
@@ -159,8 +159,8 @@ export default class BreadInsert extends Component
       }}
       isFullWidth={true}
         options={[
-            'Pandesal', 'Loaf Bread','Choco Lanay', 'Spanish Bread',
-            'Turta','Rye Bread','Humberger Bun','Breadsticks']}
+            'Bagels', 'Pretzel','Breadsticks', 'Croissant',
+            'White Bread','Wheat Bread','Whole Grain Bread','Rye Bread']}
         defaultValue={"Ordered"}
         animated
         showsHorizontalScrollIndicator={false}
@@ -286,6 +286,7 @@ export default class BreadInsert extends Component
                 />
 
                 <Button
+                    color="#382624"
                     title={"Save Record"}
                     onPress={this.InsertRecord}
                 />

@@ -36,7 +36,7 @@ export default class BreadDelete extends Component {
     {
         var ID=this.state.ID;
 
-        if(ID.length==0)
+        if(ID == null)
         {
             alert("Required Field is Missing");
         }
@@ -126,10 +126,20 @@ componentDidMount = async() => {
                 style={styles.txtStyle}
                 onChangeText={ID=>this.setState({ID})}
             />
+
+        <View style= {{ flexDirection: 'row', justifyContent: 'space-evenly'}}>
             <Button
+                color="#382624"
                 title={"Delete Record"}
                 onPress={() => this.DeleteRecord()}
             />
+             <Button
+                color="#382624"
+                title={"Refresh"}
+                onPress={() => this.componentDidMount()}
+            />
+        </View>
+
             <SafeAreaView style={styles.container}>     
                    <FlatList
                       style={{padding: 10}}
@@ -152,7 +162,7 @@ const styles=StyleSheet.create({
     {
         padding:20,
         marginTop:50,
-        marginBottom: 150,
+        marginBottom: 100,
         top: '2%',
     },
 
@@ -160,7 +170,7 @@ const styles=StyleSheet.create({
     {
         borderBottomWidth:1,
         borderBottomColor:'black',
-        marginBottom: 30,
+        marginBottom: 10,
         backgroundColor: 'white',
         padding: 10
     },

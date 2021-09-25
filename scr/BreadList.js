@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import bg2 from '../assets/bg2.png';
-import { StyleSheet, FlatList, Text, View, ActivityIndicator, TouchableOpacity, ImageBackground} from 'react-native';
+import { StyleSheet,Button, FlatList, Text, View, ActivityIndicator, TouchableOpacity, ImageBackground} from 'react-native';
 // Ownded and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
@@ -15,16 +15,20 @@ export default class BreadList extends Component {
     }
     }
 
-    componentDidMount() {
-        return fetch('http://10.0.2.2:80/bakery2/display.php')
-          .then((response) => response.json())
-          .then((responseJson) => {
-            this.setState({
-              isLoading: false,
-              dataSource: responseJson
-            })  
-          });
+    componentDidMount = async() => {
+      this.setState({ isLoading: true });
+      try {  
+       const responseJson = await fetch('http://10.0.2.2:80/bakery2/display.php')
+       const json = await responseJson.json();
+          this.setState({
+            isLoading: false,
+            dataSource: json
+          })  
+      } catch(error) { 
+          console.log(error);
+          this.setState({ isLoading: false });
       }
+    }
     
      _renderItem = ({ item }) => (
          
@@ -55,6 +59,20 @@ export default class BreadList extends Component {
                 height: '100%',
                 width: '100%'
                 }}>
+                  
+<View style={{
+  width: 100,
+  height: 50,
+  position: 'absolute',
+  top: 120,
+  left: 270,
+}}>
+      <Button
+        color="#382624"
+        title={"Refresh"}
+        onPress={() => this.componentDidMount()}
+      />
+</View>
 
         <Text style={{
         fontSize: 50,

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Component } from 'react';
+import React, {Component } from 'react';
 import { render } from 'react-dom';
 // Ownded and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
@@ -96,6 +96,7 @@ export default class BreadSearch extends Component {
                 onChangeText={ID=>this.setState({ID})}
             />
             <Button
+             color="#382624"
                 title={"Find Record"}
                 onPress={this.SearchRecord}
             />
