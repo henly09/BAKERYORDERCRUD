@@ -45,7 +45,7 @@ export default function WheatBreadScreen() {
        >Wheat Bread</Text>
        <Text
        style={styles.textimagebgsecondonepointtwo} 
-       > $NA/ea</Text>
+       > $5.00 /ea</Text>
        <Text style={styles.textimagebgsecond2}>
          <Text>        </Text>
          Wheat bread is a type of bread made using flour that is partly or entirely 

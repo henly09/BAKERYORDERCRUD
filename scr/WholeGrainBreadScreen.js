@@ -43,7 +43,7 @@ export default function WholeGrainBreadScreen() {
        >Whole Grain </Text>
        <Text
        style={styles.textimagebgsecondonepointtwo} 
-       > $NA/ea</Text>
+       > $10.00 /ea</Text>
        <Text style={styles.textimagebgsecond2}>
          <Text>        </Text>
          The exact composition of products legally marketable as "whole grain bread" 

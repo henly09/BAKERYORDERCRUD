@@ -8,6 +8,10 @@ import { View,
   ImageBackground,
   Alert,
 } from 'react-native';
+// In App.js in a new project
+// Ownded and Created by : Montera, John Henly A.
+// FB: fb.com/mhax.ter
+// Gmail: monterahens@gmail.com 
 
 import bagels from '../assets/bread2/bagels.jpg';
 import bg from '../assets/bg123.jpg';
@@ -45,7 +49,7 @@ export default function BagelsScreen() {
      >Bagels</Text>
     <Text
      style={styles.textimagebgsecondonepointtwo} 
-     > $NA/ea</Text>
+     > $2.00 /ea</Text>
      <Text style={styles.textimagebgsecond2}>
        <Text>        </Text>
         Bagels are widely associated with Ashkenazi Jews from the 17th century;

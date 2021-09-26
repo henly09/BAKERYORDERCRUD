@@ -44,7 +44,7 @@ export default function RyeBreadScreen() {
        >Rye Bread</Text>
        <Text
        style={styles.textimagebgsecondonepointtwo} 
-       > $NA/ea</Text>
+       > $5.00 /ea</Text>
        <Text style={styles.textimagebgsecond2}>
          <Text>        </Text>
          Rye bread is a type of bread made with various proportions of flour 

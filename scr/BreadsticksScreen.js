@@ -45,7 +45,7 @@ export default function BreadsticksScreen() {
        >BreadSticks</Text>
         <Text
        style={styles.textimagebgsecondonepointtwo} 
-       > $NA/ea</Text>
+       > $3.00 /ea</Text>
        <Text style={styles.textimagebgsecond2}>
          <Text>        </Text>
          It's believed that it originated in 1643, when a Florentine abbot 

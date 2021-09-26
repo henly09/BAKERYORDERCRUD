@@ -44,7 +44,7 @@ export default function WhiteBreadScreen() {
        >White Bread</Text>
        <Text
        style={styles.textimagebgsecondonepointtwo} 
-       > $NA/ea</Text>
+       > $5.00 /ea</Text>
        <Text style={styles.textimagebgsecond2}>
          <Text>        </Text>
          White bread typically refers to breads made from wheat flour 

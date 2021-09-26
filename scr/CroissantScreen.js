@@ -45,7 +45,7 @@ export default function CroissantScreen() {
        >Croissant</Text>
        <Text
        style={styles.textimagebgsecondonepointtwo} 
-       > $NA/ea</Text>
+       > $5.00 /ea</Text>
        <Text style={styles.textimagebgsecond2}>
          <Text>        </Text>
          A croissant (UK: /ˈkrwʌsɒŋ/;[3] , US: /krəsɒnt/; French pronunciation: 
