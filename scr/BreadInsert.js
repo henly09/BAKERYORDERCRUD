@@ -1,37 +1,56 @@
-import React,{Component} from 'react';
-import { View, TextInput, Button, StyleSheet, ImageBackground, Text } from 'react-native';
+import React,{Component,useState} from 'react';
+import { View, TextInput, Button, StyleSheet, ImageBackground, Text,Platform } from 'react-native';
 import bg from '../assets/bg.jpg';
 import ModalDropdown from 'react-native-modal-dropdown';
-import DatePicker from 'react-native-datepicker';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 // Ownded and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
-export default class BreadInsert extends Component
+
+export default function BreadInsert()
 {
-    constructor(props)
-    {
-        super(props);
-        this.state={
-            price:'',
-            ordered:'',
-            pieces:'',
-            Type_:'',
-            orderdate:'',
-            ordertime:'',
-            fullname:'',
-            email:'',
-            phonenumber:'',
-            address:'',
-            date:'',
-        };
-    }
+    const [date, setDate] = useState(new Date());
+    const [mode, setMode] = useState('date');
+    const [show, setShow] = useState(false);
+    const [textdate, setTextdate] = useState('yyyy-dd-mm');
+    const [texttime, setTexttime] = useState('hh:mm');
 
-    InsertRecord=()=>
-    {
+    const onChange = (event, selectedDate) => {
+        const currentDate = selectedDate || date;
+        setShow(Platform.OS === 'ios');
+        setDate(currentDate);
+  
+        let tempDate = new Date(currentDate);
+        let fDate = tempDate.getFullYear() + '-' + (tempDate.getDate() + 1) + '-' + tempDate.getMonth();
+        setOrderdate(fDate);
+        let fTime = tempDate.getHours() + ':' + tempDate.getMinutes();
+        setOrdertime(fTime);
+        setTextdate(fDate)
+        setTexttime(fTime)
+  
+        console.log('CheckerDate:'+ fDate + ' (' + fTime + ')');
+      }
+  
+      const showMode = (currentMode) => {
+        setShow(true);
+        setMode(currentMode);
+      }
 
-        var ordered=this.state.ordered;
-        var pieces=this.state.pieces;   
+    const [ordered1, setOrdered] = useState('');
+    const [pieces1, setPieces] = useState('');
+    const [Type_1, setType_] = useState('');
+    const [orderdate1, setOrderdate] = useState('');
+    const [ordertime1, setOrdertime] = useState('');
+    const [fullname1, setFullname] = useState('');
+    const [email1, setEmail] = useState('');
+    const [phonenumber1, setPhonenumber] = useState();
+    const [address1, setAddress] = useState('');
+
+    const InsertRecord=()=>
+    {
+        var ordered=ordered1;
+        var pieces=pieces1;   
         var price = 0;
 
         if (ordered == 0){
@@ -66,19 +85,19 @@ export default class BreadInsert extends Component
                                         ordered = "Rye Bread";
                                         price = 5 * pieces;}    
 
-        var Type_=this.state.Type_;
+        var Type_= Type_1;
 
             if (Type_ == 0){
                 Type_ = "Deliver";}
             else{
                 Type_ = "Pickup";}
  
-        var orderdate=this.state.date;
-        var ordertime=this.state.ordertime;
-        var fullname=this.state.fullname;
-        var email=this.state.email;
-        var phonenumber=this.state.phonenumber;
-        var address=this.state.address;
+        var orderdate=orderdate1;
+        var ordertime=ordertime1;
+        var fullname=fullname1;
+        var email=email1;
+        var phonenumber=phonenumber1;
+        var address=address1;
 
         if( 
             ordered==null || 
@@ -130,10 +149,9 @@ export default class BreadInsert extends Component
                 {
                     alert("Error"+error);
                 })
-        }
+            }
     }
-    render()
-    
+
     {
         return(
             <View>
@@ -144,6 +162,20 @@ export default class BreadInsert extends Component
                 height: '100%',
                 width: '100%'
                 }}>
+                            <Text style={{
+        fontSize: 30,
+        fontFamily: 'sans-serif',
+        fontWeight: 'bold',
+        fontStyle: "italic",
+        position: 'absolute',
+        top: 70,
+        color: 'white',
+        textShadowColor:'#0c0d0e',
+        textShadowOffset:{width: 10, height: 10},
+        textShadowRadius:20,
+        alignSelf: 'flex-start',
+        left:4
+      }}> SYSTEM ORDER FORM </Text>    
             <View style={styles.ViewStyle}>
                 
     <ModalDropdown 
@@ -181,14 +213,14 @@ export default class BreadInsert extends Component
             fontFamily: 'sans-serif',
             fontWeight: 'bold',
           }}
-        onSelect = {(ordered)=> this.setState({ordered})}/>
+        onSelect = {(ordered1)=> setOrdered(ordered1)}/>
                 
                
                  <TextInput
                     placeholder={"Pieces"}
                     placeholderTextColor={"black"}
                     style={styles.txtStyle}
-                    onChangeText={pieces=>this.setState({pieces})}
+                    onChangeText={pieces1=>setPieces(pieces1)}
                 />
 
 <ModalDropdown 
@@ -223,72 +255,71 @@ export default class BreadInsert extends Component
             fontFamily: 'sans-serif',
             fontWeight: 'bold',
         }}
-        onSelect = {(Type_)=> this.setState({Type_})}/>
+        onSelect = {(Type_1)=> setType_(Type_1)}/>
 
 <View style= {{ flexDirection: 'row', justifyContent: 'space-evenly'}}>
-  <Text style={styles.txtStyle5}> Date: </Text> 
-  <DatePicker
-        style={styles.txtStyle4}
-        date={this.state.date}
-        mode="date"
-        placeholder="select date"
-        format="YYYY-DD-MM"
-        minDate="1950-05-01"
-        maxDate="2999-06-01"
-        confirmBtnText="Confirm"
-        cancelBtnText="Cancel"
-        customStyles={{
-          dateIcon: {
-            position: 'absolute',
-            left: 0,
-            top: 4,
-            marginLeft: 0
-          },
-          dateInput: {
-            marginLeft: 36
-          }
-          // ... You can check the source to find the other keys.
-        }}
-        onDateChange={(date) => {this.setState({date: date})}}
-        useNativeDriver= {true}
-      />
+      <View style={styles.txtStyle4}>
+          <Button color="#382624" title='Date' onPress={() => showMode('date')}/>
+      </View>
+      {show && (
+        <DateTimePicker
+        testID = 'dateTimePicker'
+        value={date}
+        mode={mode}
+        is24Hour={false}
+        display='default'
+        onChange={onChange}
+        />
+      )}
+    <Text style={styles.txtStyle5}> {textdate} </Text> 
 </View>
-                <TextInput
-                    placeholder={"Time"}
-                    placeholderTextColor={"black"}
-                    style={styles.txtStyle}
-                    onChangeText={ordertime=>this.setState({ordertime})}
-                />
+
+<View style= {{ flexDirection: 'row', justifyContent: 'space-evenly'}}>
+      <View style={styles.txtStyle4}>
+          <Button color="#382624" title='Time' onPress={() => showMode('time')}/>
+      </View>
+      {show && (
+        <DateTimePicker
+        testID = 'dateTimePicker'
+        value={date}
+        mode={mode}
+        is24Hour={false}
+        display='default'
+        onChange={onChange}
+        />
+      )}
+        <Text style={styles.txtStyle5}> {texttime} </Text> 
+</View>
                  <TextInput
                     placeholder={"Customer's Name"}
                     placeholderTextColor={"black"}
                     style={styles.txtStyle}
-                    onChangeText={fullname=>this.setState({fullname})}
+                    onChangeText={fullname1=>setFullname(fullname1)}
                 />
                  <TextInput
                     placeholder={"Email"}
                     placeholderTextColor={"black"}
                     style={styles.txtStyle}
-                    onChangeText={email=>this.setState({email})}
+                    onChangeText={email1=>setEmail(email1)}
                 />
                  <TextInput
                     placeholder={"Phone Number"}
                     placeholderTextColor={"black"}
                     keyboardType={"numeric"}
                     style={styles.txtStyle}
-                    onChangeText={phonenumber=>this.setState({phonenumber})}
+                    onChangeText={phonenumber1=>setPhonenumber(phonenumber1)}
                 />
                  <TextInput
                     placeholder={"Address"}
                     placeholderTextColor={"black"}
                     style={styles.txtStyle}
-                    onChangeText={address=>this.setState({address})}
+                    onChangeText={address1=>setAddress(address1)}
                 />
 
                 <Button
                     color="#382624"
                     title={"Save Record"}
-                    onPress={this.InsertRecord}
+                    onPress={InsertRecord}
                 />
           
             </View>
@@ -304,7 +335,7 @@ const styles=StyleSheet.create({
         flex:1,
         padding: 10,
         marginTop:10,
-        top: '12%'
+        top: '13%'
     },
 
     txtStyle:{
@@ -317,11 +348,7 @@ const styles=StyleSheet.create({
     txtStyle4:{
         borderBottomWidth: 1,
         borderBottomColor: 'black',
-        marginBottom: 10,
-        padding: 0,
-        width: '59%',
-        backgroundColor: 'white',
-        
+        width: '50%',
     },
 
     txtStyle5:{

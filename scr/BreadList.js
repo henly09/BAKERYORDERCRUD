@@ -34,7 +34,7 @@ export default class BreadList extends Component {
          
         <TouchableOpacity onPress={() => alert(item.body)}>
             <View style={styles.item}>
-                <Text style={styles.text}>ID#:{item.ID}, Name:{item.ordered}, Course:{item.Type_}</Text>
+                <Text style={styles.text}>ID#:{item.ID},{"\n"}Price:{item.price},{"\n"}Order:{item.ordered},{"\n"}Type:{item.Type_},{"\n"}Price:{item.price}</Text>
             </View>
         </TouchableOpacity>
      );
@@ -59,12 +59,12 @@ export default class BreadList extends Component {
                 height: '100%',
                 width: '100%'
                 }}>
-                  
+
 <View style={{
   width: 100,
   height: 50,
   position: 'absolute',
-  top: 120,
+  top: 100,
   left: 270,
 }}>
       <Button
@@ -72,6 +72,7 @@ export default class BreadList extends Component {
         title={"Refresh"}
         onPress={() => this.componentDidMount()}
       />
+      
 </View>
 
         <Text style={{
@@ -80,7 +81,7 @@ export default class BreadList extends Component {
         fontWeight: 'bold',
         fontStyle: "italic",
         position: 'absolute',
-        top: 70,
+        top: 50,
         left: 6.5,
         color: 'white',
         textShadowColor:'#0c0d0e',
@@ -94,7 +95,7 @@ export default class BreadList extends Component {
         fontWeight: 'bold',
         fontStyle: "italic",
         position: 'absolute',
-        top: 120,
+        top: 100,
         left: 10,
         color: 'white',
         textShadowColor:'#0c0d0e',
@@ -123,7 +124,7 @@ export default class BreadList extends Component {
                     alignItems:'center',
                     backgroundColor: '#F5FCFF',
                     textAlign: 'center',
-                    top:180,
+                    top:150,
                     height: '68%',
                     width: '90%',
                     left: '5%',

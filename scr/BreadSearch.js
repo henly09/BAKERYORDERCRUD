@@ -96,7 +96,7 @@ export default class BreadSearch extends Component {
                 onChangeText={ID=>this.setState({ID})}
             />
             <Button
-             color="#382624"
+                color="#382624"
                 title={"Find Record"}
                 onPress={this.SearchRecord}
             />

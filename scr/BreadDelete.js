@@ -93,7 +93,7 @@ componentDidMount = async() => {
      
     <TouchableOpacity onPress={() => alert(item.body)}>
         <View style={styles.item}>
-            <Text style={styles.text}>ID#:{item.ID}, Name:{item.ordered}, Course:{item.Type_}</Text>
+        <Text style={styles.text}>ID#:{item.ID},{"\n"}Price:{item.price},{"\n"}Order:{item.ordered},{"\n"}Type:{item.Type_},{"\n"}Price:{item.price}</Text>
         </View>
     </TouchableOpacity>
  );

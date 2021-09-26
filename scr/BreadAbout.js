@@ -51,7 +51,7 @@ function BreadsScreen({ navigation }) {
         textShadowRadius:20,
         textAlign: 'center',
         left: 20
-      }}> MENU </Text>
+      }}> BAKERY APP  </Text>
 
        <View style={styles.arrangement}>
        <TouchableNativeFeedback onPress={() => navigation.navigate('Bagels')}>    

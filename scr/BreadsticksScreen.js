@@ -22,6 +22,21 @@ export default function BreadsticksScreen() {
                  opacity={0.5}
                  style={styles.imagebackground}
                  source={bg}/>
+       <Text style={{
+        fontSize: 35,
+        fontFamily: 'sans-serif',
+        fontWeight: 'bold',
+        fontStyle: "italic",
+        position: 'absolute',
+        alignSelf:'flex-start',
+        top:60,
+        color: 'white',
+        textShadowColor:'#0c0d0e',
+        textShadowOffset:{width: 10, height: 10},
+        textShadowRadius:20,
+        textAlign: 'center',
+        left: 20
+      }}> MENU </Text>
        <Image
        style={styles.imagebgsecond}
        source={breadsticks}/>
