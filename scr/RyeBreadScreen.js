@@ -9,6 +9,10 @@ import { View,
   Alert,
 } from 'react-native';
 
+// In App.js in a new project
+// Ownded and Created by : Montera, John Henly A.
+// FB: fb.com/mhax.ter
+// Gmail: monterahens@gmail.com 
 
 import ryebread from '../assets/bread2/ryebread.jpg';
 import bg from '../assets/bg123.jpg';

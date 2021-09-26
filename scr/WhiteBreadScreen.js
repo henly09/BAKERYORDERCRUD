@@ -11,6 +11,10 @@ import { View,
 
 import whitebread from '../assets/bread2/whitebread.png';
 import bg from '../assets/bg123.jpg';
+// In App.js in a new project
+// Ownded and Created by : Montera, John Henly A.
+// FB: fb.com/mhax.ter
+// Gmail: monterahens@gmail.com 
 
 
 export default function WhiteBreadScreen() {
