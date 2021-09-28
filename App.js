@@ -60,13 +60,16 @@ function HomeScreen({ navigation }) {
           marginTop: -80,
           alignItems: 'center',
           justifyContent: 'flex-start',
+          backgroundColor: '#925d32'
         }}
 
         dropdownTextStyle={{
           fontSize: 20,
           fontStyle: "italic",
           fontFamily: 'sans-serif',
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          backgroundColor: '#925d32',
+          color: 'white'
         }}
         onSelect = {(e)=> navigation.navigate(pages[e])}>
 
