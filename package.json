@@ -24,7 +24,8 @@
     "react-native-modal-dropdown": "^1.0.1",
     "react-native-web": "~0.13.12",
     "react-navigation-stack": "^2.10.4",
-    "react-time-picker": "^4.4.1"
+    "react-time-picker": "^4.4.1",
+    "recyclerlistview": "^3.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"

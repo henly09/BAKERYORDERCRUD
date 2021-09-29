@@ -91,11 +91,11 @@ componentDidMount = async() => {
 
  _renderItem = ({ item }) => (
      
-    <TouchableOpacity onPress={() => alert(item.body)}>
-        <View style={styles.item}>
-        <Text style={styles.text}>ID#:{item.ID},{"\n"}Price:{item.price},{"\n"}Order:{item.ordered},{"\n"}Type:{item.Type_},{"\n"}Price:{item.price}</Text>
-        </View>
-    </TouchableOpacity>
+<TouchableOpacity onPress={() => alert(item.body)}>
+    <View style={styles.item}>
+        <Text style={styles.text}>OrderID#: {item.ID},Price: ${item.price},{"\n"}Order: {item.ordered},Type: {item.Type_},{"\n"}</Text>
+    </View>
+</TouchableOpacity>
  );
 
 /*------------------------------------------------------------------------------*/
@@ -161,9 +161,7 @@ const styles=StyleSheet.create({
     viewStyle:
     {
         padding:20,
-        marginTop:50,
-        marginBottom: 100,
-        top: '2%',
+        top: '8%',
     },
 
     txtStyle:
@@ -187,11 +185,11 @@ const styles=StyleSheet.create({
         width: '100%'
         },
 
-    item:{
-            paddingBottom: 10,
-            borderBottomWidth:2,
+        item:{
+            borderBottomWidth:3,
             borderBottomColor: '#eee',
-        },
+            width: '100%'
+              },
 
     text:{
             fontSize: 15,

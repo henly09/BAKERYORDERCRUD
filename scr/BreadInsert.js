@@ -10,11 +10,11 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function BreadInsert()
 {
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState(new Date(1598051730000));
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
     const [textdate, setTextdate] = useState('yyyy-dd-mm');
-    const [texttime, setTexttime] = useState('hh:mm');
+    const [texttime, setTexttime] = useState('hh:mm:ss');
 
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
@@ -22,9 +22,9 @@ export default function BreadInsert()
         setDate(currentDate);
   
         let tempDate = new Date(currentDate);
-        let fDate = tempDate.getFullYear() + '-' + (tempDate.getDate() + 1) + '-' + tempDate.getMonth();
-        setOrderdate(fDate);
+        let fDate = tempDate.getFullYear() + '-' + tempDate.getDate() + '-' + (tempDate.getMonth() + 1);
         let fTime = tempDate.getHours() + ':' + tempDate.getMinutes();
+        setOrderdate(fDate);
         setOrdertime(fTime);
         setTextdate(fDate)
         setTexttime(fTime)
@@ -278,16 +278,6 @@ export default function BreadInsert()
       <View style={styles.txtStyle4}>
           <Button color="#382624" title='Time' onPress={() => showMode('time')}/>
       </View>
-      {show && (
-        <DateTimePicker
-        testID = 'dateTimePicker'
-        value={date}
-        mode={mode}
-        is24Hour={false}
-        display='default'
-        onChange={onChange}
-        />
-      )}
         <Text style={styles.txtStyle5}> {texttime} </Text> 
 </View>
                  <TextInput

@@ -25,7 +25,7 @@ import ryebread from '../assets/bread1/ryebread.png';
 import wheatbread from '../assets/bread1/wheatbread.png';
 import whitebread from '../assets/bread1/whitebread.png';
 import wholegrainbread from '../assets/bread1/wholegrainbread.png';
-import bg from '../assets/bg123.jpg';
+import bg2 from '../assets/bg2.png';
 
 function BreadsScreen({ navigation }) {
     return (
@@ -34,7 +34,7 @@ function BreadsScreen({ navigation }) {
         <ImageBackground
                    opacity={0.5}
                    style={styles.imagebackground}
-                   source={bg}/>
+                   source={bg2}/>
        </View>
 
        <Text style={{

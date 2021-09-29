@@ -34,7 +34,7 @@ export default class BreadList extends Component {
          
         <TouchableOpacity onPress={() => alert(item.body)}>
             <View style={styles.item}>
-                <Text style={styles.text}>ID#:{item.ID},{"\n"}Price:{item.price},{"\n"}Order:{item.ordered},{"\n"}Type:{item.Type_},{"\n"}Price:{item.price}</Text>
+                <Text style={styles.text}>OrderID#: {item.ID},Price: ${item.price},{"\n"}Order: {item.ordered},Type: {item.Type_},{"\n"}</Text>
             </View>
         </TouchableOpacity>
      );
@@ -124,18 +124,17 @@ export default class BreadList extends Component {
                     alignItems:'center',
                     backgroundColor: '#F5FCFF',
                     textAlign: 'center',
-                    top:150,
+                    top:160,
                     height: '68%',
                     width: '90%',
                     left: '5%',
-                    padding: 20
-
+                    padding: 10
                     },
                    
                 item:{
-                  paddingBottom: 10,
-                  borderBottomWidth:2,
+                  borderBottomWidth:3,
                   borderBottomColor: '#eee',
+                  width: '150%'
                     },
                     
                 text:{
