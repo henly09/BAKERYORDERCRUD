@@ -13,9 +13,18 @@ import {
     TouchableOpacity,
     StyleSheet,
     SafeAreaView,
-    ImageBackground
+    ImageBackground,
+    Image
 } from 'react-native';
 import bg from '../assets/bg.jpg';
+import bagels from '../assets/bread1/bagels.png';
+import breadsticks from '../assets/bread1/breadsticks.png';
+import croissant from '../assets/bread1/croissant.png';
+import pretzel from '../assets/bread1/pretzel.png';
+import ryebread from '../assets/bread1/ryebread.png';
+import wheatbread from '../assets/bread1/wheatbread.png';
+import whitebread from '../assets/bread1/whitebread.png';
+import wholegrainbread from '../assets/bread1/wholegrainbread.png';
 
 export default class BreadDelete extends Component {
 
@@ -89,14 +98,41 @@ componentDidMount = async() => {
     }
   }
 
- _renderItem = ({ item }) => (
+ _renderItem = ({ item }) => {
+    awtsgege = item.ordered;
      
-<TouchableOpacity onPress={() => alert(item.body)}>
-    <View style={styles.item}>
-        <Text style={styles.text}>OrderID#: {item.ID},Price: ${item.price},{"\n"}Order: {item.ordered},Type: {item.Type_},{"\n"}</Text>
-    </View>
-</TouchableOpacity>
- );
+    const breads = [
+     bagels,
+     breadsticks,
+     croissant,
+     pretzel,
+     ryebread,
+     wheatbread,
+     whitebread,
+     wholegrainbread];
+   
+   var e;
+   var awtsgege;
+   
+   if ( awtsgege == 'Bagels'){e=0;}
+   if ( awtsgege == 'Pretzel'){e=3;}
+   if ( awtsgege == 'Breadsticks'){e=1;}
+   if ( awtsgege == 'Croissant'){e=2;}
+   if ( awtsgege == 'White Bread'){e=6;}
+   if ( awtsgege == 'Wheat Bread'){e=5;}
+   if ( awtsgege == 'Whole Grain Bread'){e=7;}
+   if ( awtsgege == 'Rye Bread'){e=4;}
+
+    return ( 
+ <TouchableOpacity onPress={() => alert(item.body)}>
+            <View>
+            <View style={styles.item}>
+                <Text style={styles.text}>OrderID#: {item.ID},Price: ${item.price},{"\n"}Order: {item.ordered},Type: {item.Type_}</Text>
+            </View>
+                <Image style= {{ position: 'absolute',height: 50, width: 50, top: 5}}source={breads[e]}/>
+            </View>
+        </TouchableOpacity>
+ );}
 
 /*------------------------------------------------------------------------------*/
     render()
@@ -142,7 +178,7 @@ componentDidMount = async() => {
 
             <SafeAreaView style={styles.container}>     
                    <FlatList
-                      style={{padding: 10}}
+                      style={{padding: 8,width: '100%'}}
                       data={ this.state.dataSource }       
                       renderItem={this._renderItem}
                       keyExtractor={(item, index) => index.toString()}
@@ -177,18 +213,18 @@ const styles=StyleSheet.create({
         alignItems:'center',
         backgroundColor: '#F5FCFF',
         marginTop: 10,
-        paddingTop: 10,
         top: 5,
-        paddingBottom: 10,
         textAlign: 'center',
         height: 500,
         width: '100%'
         },
 
-        item:{
+    item:{
             borderBottomWidth:3,
             borderBottomColor: '#eee',
-            width: '100%'
+            width: '100%',
+            padding:10,
+            left: 50
               },
 
     text:{

@@ -85,6 +85,33 @@ export default class BreadSearch extends Component {
                 height: '100%',
                 width: '100%'
                 }}>
+                    <Text style={{
+        fontSize: 35,
+        fontFamily: 'sans-serif',
+        fontWeight: 'bold',
+        fontStyle: "italic",
+        position: 'absolute',
+        top: 65,
+        left: 8,
+        color: 'white',
+        textShadowColor:'#0c0d0e',
+        textShadowOffset:{width: 10, height: 10},
+        textShadowRadius:20,
+      }}> BAKERY APPLICATION </Text> 
+
+<Text style={{
+        fontSize: 20,
+        fontFamily: 'sans-serif',
+        fontWeight: 'bold',
+        fontStyle: "italic",
+        position: 'absolute',
+        top: 110,
+        left: 13,
+        color: 'white',
+        textShadowColor:'#0c0d0e',
+        textShadowOffset:{width: 10, height: 10},
+        textShadowRadius:20,
+      }}> DATABASE SEARCH SYSTEM </Text>
 
         <View style={styles.viewStyle}>
 
@@ -145,7 +172,7 @@ const styles=StyleSheet.create({
         flex:1,
         padding:20,
         marginTop:20,
-        top: '13%',
+        top: '20%',
         
     },
 
