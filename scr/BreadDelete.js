@@ -129,7 +129,7 @@ componentDidMount = async() => {
             <View style={styles.item}>
                 <Text style={styles.text}>OrderID#: {item.ID},Price: ${item.price},{"\n"}Order: {item.ordered},Type: {item.Type_}</Text>
             </View>
-                <Image style= {{ position: 'absolute',height: 50, width: 50, top: 5}}source={breads[e]}/>
+                <Image style= {styles.thumbnail}source={breads[e]}/>
             </View>
         </TouchableOpacity>
  );}
@@ -219,20 +219,29 @@ const styles=StyleSheet.create({
         width: '100%'
         },
 
-    item:{
+        item:{
             borderBottomWidth:3,
             borderBottomColor: '#eee',
-            width: '100%',
-            padding:10,
+            width: '150%',
+            padding :20,
             left: 50
               },
-
-    text:{
-            fontSize: 15,
-            fontFamily: 'sans-serif',
-            fontWeight: 'bold',
-            fontStyle: "italic",
-        }
+              
+          text:{
+                  fontSize: 15,
+                  fontFamily: 'sans-serif',
+                  fontWeight: 'bold',
+                  fontStyle: "italic",
+              },
+          
+          thumbnail:{
+            resizeMode: 'center',
+            position: 'absolute',
+            height: 50, 
+            width: 50, 
+            top: 15,
+            backgroundColor:"#382624"
+          }
 
 
 

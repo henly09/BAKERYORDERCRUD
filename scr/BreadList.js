@@ -41,7 +41,7 @@ export default class BreadList extends Component {
     
      _renderItem = ({item}) => {
 
-      awtsgege = item.ordered;
+      thumbnail = item.ordered;
      
       const breads = [
        bagels,
@@ -54,16 +54,16 @@ export default class BreadList extends Component {
        wholegrainbread];
      
      var e;
-     var awtsgege;
+     var thumbnail;
      
-     if ( awtsgege == 'Bagels'){e=0;}
-     if ( awtsgege == 'Pretzel'){e=3;}
-     if ( awtsgege == 'Breadsticks'){e=1;}
-     if ( awtsgege == 'Croissant'){e=2;}
-     if ( awtsgege == 'White Bread'){e=6;}
-     if ( awtsgege == 'Wheat Bread'){e=5;}
-     if ( awtsgege == 'Whole Grain Bread'){e=7;}
-     if ( awtsgege == 'Rye Bread'){e=4;}
+     if ( thumbnail == 'Bagels'){e=0;}
+     if ( thumbnail == 'Pretzel'){e=3;}
+     if ( thumbnail == 'Breadsticks'){e=1;}
+     if ( thumbnail == 'Croissant'){e=2;}
+     if ( thumbnail == 'White Bread'){e=6;}
+     if ( thumbnail == 'Wheat Bread'){e=5;}
+     if ( thumbnail == 'Whole Grain Bread'){e=7;}
+     if ( thumbnail == 'Rye Bread'){e=4;}
 
        return (
         <TouchableOpacity onPress={() => alert(item.body)}>
@@ -71,7 +71,7 @@ export default class BreadList extends Component {
             <View style={styles.item}>
                 <Text style={styles.text}>OrderID#: {item.ID},Price: ${item.price},{"\n"}Order: {item.ordered},Type: {item.Type_}</Text>
             </View>
-                <Image style= {{ position: 'absolute',height: 50, width: 50, top: 5}}source={breads[e]}/>
+                <Image style= {styles.thumbnail}source={breads[e]}/>
             </View>
         </TouchableOpacity>
      );}
@@ -163,17 +163,17 @@ export default class BreadList extends Component {
                     backgroundColor: '#F5FCFF',
                     textAlign: 'center',
                     top:160,
-                    height: '68%',
+                    height: '70%',
                     width: '90%',
                     left: '5%',
-                    padding: 10
+                    padding: 5
                     },
                    
                 item:{
                   borderBottomWidth:3,
                   borderBottomColor: '#eee',
                   width: '150%',
-                  padding :10,
+                  padding :20,
                   left: 50
                     },
                     
@@ -182,5 +182,14 @@ export default class BreadList extends Component {
                         fontFamily: 'sans-serif',
                         fontWeight: 'bold',
                         fontStyle: "italic",
-                    }
+                    },
+                
+                thumbnail:{
+                  resizeMode: 'center',
+                  position: 'absolute',
+                  height: 50, 
+                  width: 50, 
+                  top: 15,
+                  backgroundColor:"#382624"
+                }
                 });
