@@ -20,8 +20,7 @@ export default class BreadList extends Component {
       super();
       this.state = { 
       isLoading: true,
-      dataSource:[],
-      temp : ''
+      dataSource:[]
     }
     }
 
