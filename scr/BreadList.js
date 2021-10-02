@@ -12,6 +12,7 @@ import ryebread from '../assets/bread1/ryebread.png';
 import wheatbread from '../assets/bread1/wheatbread.png';
 import whitebread from '../assets/bread1/whitebread.png';
 import wholegrainbread from '../assets/bread1/wholegrainbread.png';
+import logo from '../assets/logo.png';
 
 export default class BreadList extends Component {
 
@@ -20,7 +21,8 @@ export default class BreadList extends Component {
       super();
       this.state = { 
       isLoading: true,
-      dataSource:[]
+      dataSource:[],
+      isFetching:false
     }
     }
 
@@ -38,6 +40,11 @@ export default class BreadList extends Component {
           this.setState({ isLoading: false });
       }
     }
+
+    onRefresh() {
+      this.setState({isFetching: true,},() => {this.componentDidMount();});
+      this.setState({ isFetching: false })
+  }
     
      _renderItem = ({item}) => {
 
@@ -97,6 +104,17 @@ export default class BreadList extends Component {
                 width: '100%'
                 }}>
 
+                   <Image 
+         source= {logo}
+         style={{ 
+         height: 120,
+         width: 120,
+         position: 'absolute',
+         left: 250,
+         top:35,
+         resizeMode: 'center',
+         }}/>
+
 <View style={{
   width: 100,
   height: 50,
@@ -104,11 +122,8 @@ export default class BreadList extends Component {
   top: 100,
   left: 270,
 }}>
-      <Button
-        color="#382624"
-        title={"Refresh"}
-        onPress={() => this.componentDidMount()}
-      />
+
+ 
       
 </View>
 
@@ -143,7 +158,9 @@ export default class BreadList extends Component {
                 <View style={styles.container}>     
                        <FlatList
                           style={{padding: 5, width: '100%'}}
-                          data={ this.state.dataSource }         
+                          data={ this.state.dataSource }
+                          onRefresh={() => this.onRefresh()}
+                          refreshing={this.state.isFetching}         
                           renderItem={this._renderItem}
                           keyExtractor={(item, index) => index.toString()}
                         />                
