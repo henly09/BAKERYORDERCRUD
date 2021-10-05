@@ -157,7 +157,7 @@ export default class BreadList extends Component {
       
                 <View style={styles.container}>     
                        <FlatList
-                          style={{padding: 5, width: '100%'}}
+                          style={{width: '100%'}}
                           data={ this.state.dataSource }
                           onRefresh={() => this.onRefresh()}
                           refreshing={this.state.isFetching}         
@@ -182,8 +182,7 @@ export default class BreadList extends Component {
                     top:160,
                     height: '70%',
                     width: '90%',
-                    left: '5%',
-                    padding: 5
+                    alignSelf :'center'
                     },
                    
                 item:{
@@ -191,7 +190,7 @@ export default class BreadList extends Component {
                   borderBottomColor: '#eee',
                   width: '150%',
                   padding :20,
-                  left: 50
+                  left: 70
                     },
                     
                 text:{
@@ -206,7 +205,8 @@ export default class BreadList extends Component {
                   position: 'absolute',
                   height: 50, 
                   width: 50, 
-                  top: 15,
+                  top: 17,
+                  left: 20,
                   backgroundColor:"#382624"
                 }
                 });
