@@ -5,9 +5,9 @@
 
 import * as React from 'react';
 import { View, Text, Button, Image, ImageBackground,TouchableOpacity, TouchableNativeFeedback } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import ModalDropdown from 'react-native-modal-dropdown';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 import BreadInsert from './scr/BreadInsert.js';
@@ -151,13 +151,13 @@ function HomeScreen({ navigation }) {
       <Button
         color="#382624"
         title={"Bread List"}
-        onPress={() => navigation.navigate('BreadList')}
+        onPress={() => navigation.navigate('List')}
       />
 
       <Button
         color="#382624"
         title={"Menu"}
-        onPress={() => navigation.navigate('BreadAbout')}
+        onPress={() => navigation.navigate('About')}
       />
 
       </View>
@@ -169,19 +169,21 @@ function HomeScreen({ navigation }) {
 const Tab = createBottomTabNavigator();
 
 
-export default function App() {
+export default function BottomTabNavigator() {
   return (
     <NavigationContainer>
+    
       <Tab.Navigator
     initialRouteName="HomeScreen"
       screenOptions={{
         tabBarStyle: { 
           position: 'absolute',
           backgroundColor: '#925d32',
-          borderTopLeftRadius: 5,
-          borderTopRightRadius: 5,
-          height: 60,
-          width: "100%"
+          borderRadius: 10,
+          height: 70,
+          width: "98%",
+          left: 5,
+          bottom: 5
         },
         tabBarShowLabel: false,
         showElevation: true,   
@@ -297,7 +299,6 @@ export default function App() {
         
     </Tab.Navigator>
     </NavigationContainer>
-    
   );
 }
 

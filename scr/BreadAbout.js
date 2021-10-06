@@ -54,47 +54,47 @@ function BreadsScreen({ navigation }) {
       }}> BAKERY APP  </Text>
 
        <View style={styles.arrangement}>
-       <TouchableNativeFeedback onPress={() => navigation.navigate('Bagels')}>    
+       <TouchableNativeFeedback onPress={() => navigation.push('Bagels')}>    
            <Image 
            style={styles.breadlogo1}
            source={bagels}/>
        </TouchableNativeFeedback>
-       <TouchableNativeFeedback onPress={() => navigation.navigate('Pretzels')}>
+       <TouchableNativeFeedback onPress={() => navigation.push('Pretzels')}>
            <Image 
           style={styles.breadlogo2}
            source={pretzel}/>
        </TouchableNativeFeedback>
        </View>
        <View style={styles.arrangement}>
-       <TouchableNativeFeedback onPress={() => navigation.navigate('Breadsticks')}> 
+       <TouchableNativeFeedback onPress={() => navigation.push('Breadsticks')}> 
            <Image 
            style={styles.breadlogo1}
            source={breadsticks}/>
        </TouchableNativeFeedback>
-       <TouchableNativeFeedback onPress={() => navigation.navigate('Croissant')}> 
+       <TouchableNativeFeedback onPress={() => navigation.push('Croissant')}> 
            <Image 
            style={styles.breadlogo2}
            source={croissant}/>
        </TouchableNativeFeedback>
        </View>
        <View style={styles.arrangement}>
-       <TouchableNativeFeedback onPress={() => navigation.navigate('White Bread')}>
+       <TouchableNativeFeedback onPress={() => navigation.push('White Bread')}>
            <Image 
             style={styles.breadlogo1}
            source={whitebread}/>
        </TouchableNativeFeedback>
-       <TouchableNativeFeedback onPress={() => navigation.navigate('Wheat Bread')}>
+       <TouchableNativeFeedback onPress={() => navigation.push('Wheat Bread')}>
            <Image style={styles.breadlogo2}
            source={wheatbread}/>
        </TouchableNativeFeedback>
        </View>
        <View style={styles.arrangement}>
-       <TouchableNativeFeedback onPress={() => navigation.navigate('Whole Grain Bread')}>
+       <TouchableNativeFeedback onPress={() => navigation.push('Whole Grain Bread')}>
            <Image 
            style={styles.breadlogo1}
            source={wholegrainbread}/>
        </TouchableNativeFeedback>
-       <TouchableNativeFeedback onPress={() => navigation.navigate('Rye Bread')}>
+       <TouchableNativeFeedback onPress={() => navigation.push('Rye Bread')}>
            <Image 
            style={styles.breadlogo2}
            source={ryebread}/>
@@ -159,10 +159,11 @@ const styles = StyleSheet.create({
   },
   
   imagebackground: {
-    height: 755,
+    height: 1000,
     width: 500,
     backgroundColor: 'black',
     position: 'absolute',
+    resizeMode: 'center'
   },
   
   })

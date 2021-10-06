@@ -162,6 +162,7 @@ export default function BreadInsert()
                 height: '100%',
                 width: '100%'
                 }}>
+
                             <Text style={{
         fontSize: 30,
         fontFamily: 'sans-serif',

@@ -107,11 +107,11 @@ export default class BreadList extends Component {
                    <Image 
          source= {logo}
          style={{ 
-         height: 120,
-         width: 120,
+         height: 100,
+         width: 100,
          position: 'absolute',
          left: 250,
-         top:35,
+         top:45,
          resizeMode: 'center',
          }}/>
 
@@ -180,7 +180,7 @@ export default class BreadList extends Component {
                     backgroundColor: '#F5FCFF',
                     textAlign: 'center',
                     top:160,
-                    height: '70%',
+                    height: '68%',
                     width: '90%',
                     alignSelf :'center'
                     },
