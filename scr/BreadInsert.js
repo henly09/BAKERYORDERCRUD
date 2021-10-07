@@ -189,12 +189,13 @@ export default function BreadInsert()
             paddingLeft:11,
             marginBottom: 10,
             backgroundColor: 'white',
+            borderRadius: 5
       }}
       isFullWidth={true}
         options={[
             'Bagels', 'Pretzel','Breadsticks', 'Croissant',
             'White Bread','Wheat Bread','Whole Grain Bread','Rye Bread']}
-        defaultValue={"Ordered                                                                              V"}
+        defaultValue={"Ordered                                                                                        V"}
         animated
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={true}
@@ -234,12 +235,13 @@ export default function BreadInsert()
             paddingLeft:11,
             marginBottom: 10,
             backgroundColor: 'white',
+            borderRadius: 5
       }}
       defaultTextStyle={{
           fontSize: 14
       }}
         options={['Delivery','Pickup']}
-        defaultValue={"Type                                                                                    V"}
+        defaultValue={"Type                                                                                              V"}
         animated
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={true}
@@ -326,7 +328,7 @@ const styles=StyleSheet.create({
         flex:1,
         padding: 10,
         marginTop:10,
-        top: '13%'
+        top: '17%'
     },
 
     txtStyle:{
@@ -335,11 +337,13 @@ const styles=StyleSheet.create({
         padding: 10,
         marginBottom: 10,
         backgroundColor: 'white',
+        borderRadius: 5
     },
     txtStyle4:{
         borderBottomWidth: 1,
         borderBottomColor: 'black',
         width: '50%',
+        borderRadius: 5
     },
 
     txtStyle5:{
@@ -351,7 +355,8 @@ const styles=StyleSheet.create({
         backgroundColor: 'white',
         alignSelf: 'center',
         textAlign: 'center',
-        fontSize: 13
+        fontSize: 13,
+        borderRadius: 5
         
     },
 

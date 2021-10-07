@@ -5,7 +5,6 @@
 
 import * as React from 'react';
 import { View,Text, TouchableNativeFeedback, Image, ImageBackground,StyleSheet,SafeAreaView } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import BagelsScreen from './BagelsScreen';
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
   breadlogo1: {
     borderWidth: 3,
     borderColor: 'black',
-    height: 140, 
+    height: 150, 
     width: 150,
     marginRight: 13,
     margin: 5, 
@@ -144,7 +143,7 @@ const styles = StyleSheet.create({
   breadlogo2: {
     borderWidth: 3,
     borderColor: 'black',
-    height: 140, 
+    height: 150, 
     width: 150,
     marginLeft: 13,
     margin: 5, 
