@@ -133,10 +133,10 @@ const styles = StyleSheet.create({
   breadlogo1: {
     borderWidth: 3,
     borderColor: 'black',
-    height: 150, 
-    width: 160,
+    height: 140, 
+    width: 150,
     marginRight: 13,
-    margin: 2, 
+    margin: 5, 
     borderRadius: 15, 
     bottom: 25 ,
   }, 
@@ -144,18 +144,18 @@ const styles = StyleSheet.create({
   breadlogo2: {
     borderWidth: 3,
     borderColor: 'black',
-    height: 150, 
-    width: 160,
+    height: 140, 
+    width: 150,
     marginLeft: 13,
-    margin: 2, 
+    margin: 5, 
     borderRadius: 15, 
-    bottom: 25 
+    bottom: 25, 
   },
   
   arrangement: {
     flexDirection: 'row', 
     justifyContent: 'center',
-    top: 115
+    top: 125
   },
   
   imagebackground: {
