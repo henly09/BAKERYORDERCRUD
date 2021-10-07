@@ -2,10 +2,9 @@
 // Ownded and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
-import {useState} from 'react';
 import * as React from 'react';
+import { useState } from 'react';
 import { View, Text, Button, Image, ImageBackground,TouchableOpacity, TouchableNativeFeedback, StyleSheet } from 'react-native';
-import ModalDropdown from 'react-native-modal-dropdown';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
@@ -17,7 +16,7 @@ import BreadDelete from './scr/BreadDelete.js';
 import BreadList from './scr/BreadList.js';
 import BreadAbout from './scr/BreadAbout';
 
-import dash from './assets/dash.png';
+import arrow from './assets/arrow.png';
 import logo from './assets/logo.png';
 import bg2 from './assets/bg2.png';
 import menubg from './assets/menu.png';
@@ -28,15 +27,12 @@ import deleted from './assets/delete.png';
 import list from './assets/list.png';
 import about from './assets/about.png';
 
+const Tab = createBottomTabNavigator();
 
 function HomeScreen({ navigation }) {
 
-  const pages = ['Insert', 'Search','Delete', 'List','About'];
-
   return (
-    
-    <View>
-      
+    <View>  
      <ImageBackground 
                 source={bg2} 
                 resizeMode="cover" 
@@ -129,18 +125,116 @@ function HomeScreen({ navigation }) {
   );
 }
 
-const Tab = createBottomTabNavigator();
+function SideMenuBar(){
+  const navigation = useNavigation();
+  return(
+<View>
+     <ImageBackground 
+                source={menubg} 
+                resizeMode="cover" 
+                style={{
+                height: '100%',
+                width: '100%'
+     }}>
 
-export default function Application () {
-    return (
+<Text
+    style={{
+      fontSize: 30,
+      fontFamily: 'sans-serif',
+      fontWeight: 'bold',
+      color:'white',
+      left: 5,
+      top: 100
+    }}
+    > MENU</Text>
+
+  <View style={{
+    top: 100,
+    alignSelf: 'center',
+    width: '100%',
+    left: 15,
+    paddingTop: 10
+  }}>
+
+    <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}> 
+    <Text style={styles.sidemenunav}>HOME</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity onPress={() => navigation.navigate('Insert')}> 
+    <Text style={styles.sidemenunav}>INSERT</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity onPress={() => navigation.navigate('Search')}> 
+    <Text style={styles.sidemenunav}>SEARCH</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity onPress={() => navigation.navigate('Delete')}>
+    <Text style={styles.sidemenunav}>DELETE</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity onPress={() => navigation.navigate('List')}>
+    <Text style={styles.sidemenunav}>DATABASE LIST</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity onPress={() => navigation.navigate('About')}>
+    <Text style={styles.sidemenunav}>MENU</Text>
+    </TouchableOpacity>
+    
+    <TouchableOpacity onPress={() => alert('Page not available!')}>
+    <Text style={styles.sidemenunav}>CONTACT</Text>
+    </TouchableOpacity>
+    
+    <TouchableOpacity onPress={() => alert('Page not available!')}>
+    <Text style={styles.sidemenunav}>SERVICES</Text>
+    </TouchableOpacity>
+
+  </View>
+
+    
+ <View style={{position: 'absolute',top: '74%'}}>        
+         <Image 
+         source= {logo}
+         style={{ 
+         height: 80,
+         width: 80,
+         left: 45,
+         top:70,
+         resizeMode: 'center',
+         position: 'absolute'
+         }}/>
+
+    <Text style={{
+      fontSize: 10,
+      fontFamily: 'sans-serif',
+      fontWeight:'normal',
+      fontStyle: "italic",
+      top: 150,
+      left: 40,
+      color: 'white',
+      textShadowColor:'#0c0d0e',
+      textShadowOffset:{width: 5, height: 5},
+      textShadowRadius:15,
+      textAlign: 'center',
+    }}>
+      BAKERY™ SYSTEM{'\n'}SOLUTIONS
+    </Text>
+</View>
+     </ImageBackground>
+   </View>
+);
+}
+
+export default function Bottomtabnav(){
+  
+  return(
     <NavigationContainer>
-      <SideMenu 
-      openMenuOffset={180} 
-      menu={<SideMenuBar/>} 
-      bounceBackOnOverdraw={false}
-      autoClosing={true}
-      allowOverlayPressPropagation={true}>
-      <Tab.Navigator
+    <SideMenu 
+    openMenuOffset={180} 
+    menu={<SideMenuBar/>} 
+    bounceBackOnOverdraw={false}
+    isOpen={false}
+    allowOverlayPressPropagation={true}>
+    <Tab.Navigator
     initialRouteName="HomeScreen"
       screenOptions={{
         tabBarStyle: { 
@@ -192,7 +286,6 @@ export default function Application () {
             ),
         }}/>
 
-        
 <Tab.Screen name="About" component={BreadAbout}  options = {{
             headerShown: false,
             tabBarIcon: ({focused}) => (    
@@ -266,121 +359,17 @@ export default function Application () {
     </Tab.Navigator>
     </SideMenu>
     </NavigationContainer>
-
-    );
-  
+  );
 }
-
-function SideMenuBar(){
-  const navigation = useNavigation();
-  return(
-<View>
-     <ImageBackground 
-                source={menubg} 
-                resizeMode="cover" 
-                style={{
-                height: '100%',
-                width: '100%'
-     }}>
-  
-  <View style={{
-    top: 100,
-    alignSelf: 'center',
-    width: '100%',
-    left: 15
-  }}>
-
-    <Text
-    style={{
-      fontSize: 30,
-      fontFamily: 'sans-serif',
-      paddingTop: 15,
-      fontWeight: 'bold',
-      color:'white',
-      width: '80%',
-      paddingBottom: 5,
-      right: 10
-    }}
-    > MENU</Text>
-
-    <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}> 
-    <Text style={styles.sidemenunav}>HOME</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity onPress={() => navigation.navigate('Insert')}> 
-    <Text style={styles.sidemenunav}>INSERT</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity onPress={() => navigation.navigate('Search')}> 
-    <Text style={styles.sidemenunav}>SEARCH</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity onPress={() => navigation.navigate('Delete')}>
-    <Text style={styles.sidemenunav}>DELETE</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity onPress={() => navigation.navigate('List')}>
-    <Text style={styles.sidemenunav}>DATABASE LIST</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity onPress={() => navigation.navigate('About')}>
-    <Text style={styles.sidemenunav}>MENU</Text>
-    </TouchableOpacity>
-    
-    <TouchableOpacity onPress={() => alert('Page not available!')}>
-    <Text style={styles.sidemenunav}>CONTACT</Text>
-    </TouchableOpacity>
-    
-    <TouchableOpacity onPress={() => alert('Page not available!')}>
-    <Text style={styles.sidemenunav}>SERVICES</Text>
-    </TouchableOpacity>
-
-  </View>
-
-    
- <View style={{position: 'absolute',top: '74%'}}>        
-         <Image 
-         source= {logo}
-         style={{ 
-         height: 80,
-         width: 80,
-         left: 45,
-         top:70,
-         resizeMode: 'center',
-         position: 'absolute'
-         }}/>
-
-    <Text style={{
-      fontSize: 10,
-      fontFamily: 'sans-serif',
-      fontWeight:'normal',
-      fontStyle: "italic",
-      top: 150,
-      left: 40,
-      color: 'white',
-      textShadowColor:'#0c0d0e',
-      textShadowOffset:{width: 5, height: 5},
-      textShadowRadius:15,
-      textAlign: 'center',
-    }}>
-      BAKERY™ SYSTEM{'\n'}SOLUTIONS
-    </Text>
-</View>
-     </ImageBackground>
-   </View>
-);
-}
-
-
 
 const styles = StyleSheet.create({
   
   sidemenunav: {
     fontSize: 14,
     fontFamily: 'sans-serif',
-    paddingTop: 30,
     color:'white',
     width: '80%',
+    paddingTop: 20
   }
   
   })
