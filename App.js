@@ -16,8 +16,8 @@ import BreadDelete from './scr/BreadDelete.js';
 import BreadList from './scr/BreadList.js';
 import BreadAbout from './scr/BreadAbout';
 
-import arrow from './assets/arrow.png';
 import logo from './assets/logo.png';
+import cafe from './assets/cafe.gif';
 import bg2 from './assets/bg2.png';
 import menubg from './assets/menu.png';
 import home from './assets/home.png';
@@ -129,7 +129,15 @@ function SideMenuBar(){
   const navigation = useNavigation();
   return(
 <View>
-     <ImageBackground 
+<ImageBackground
+                source={cafe} 
+                resizeMode='cover' 
+                style={{
+                height: '100%',
+                width: '100%'
+     }}> 
+     <ImageBackground
+                opacity={0.78} 
                 source={menubg} 
                 resizeMode="cover" 
                 style={{
@@ -219,6 +227,7 @@ function SideMenuBar(){
       BAKERY™ SYSTEM{'\n'}SOLUTIONS
     </Text>
 </View>
+     </ImageBackground>
      </ImageBackground>
    </View>
 );
@@ -367,6 +376,7 @@ const styles = StyleSheet.create({
   sidemenunav: {
     fontSize: 14,
     fontFamily: 'sans-serif',
+    fontWeight: 'bold',
     color:'white',
     width: '80%',
     paddingTop: 20
