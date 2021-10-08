@@ -132,8 +132,8 @@ const styles = StyleSheet.create({
   breadlogo1: {
     borderWidth: 3,
     borderColor: 'black',
-    height: 150, 
-    width: 150,
+    height: 140, 
+    width: 140,
     marginRight: 13,
     margin: 5, 
     borderRadius: 15, 
@@ -143,8 +143,8 @@ const styles = StyleSheet.create({
   breadlogo2: {
     borderWidth: 3,
     borderColor: 'black',
-    height: 150, 
-    width: 150,
+    height: 140, 
+    width: 140,
     marginLeft: 13,
     margin: 5, 
     borderRadius: 15, 

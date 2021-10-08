@@ -3,8 +3,7 @@
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
 import * as React from 'react';
-import { useState } from 'react';
-import { View, Text, Button, Image, ImageBackground,TouchableOpacity, TouchableNativeFeedback, StyleSheet } from 'react-native';
+import { View, Text, Button, Image, ImageBackground,TouchableOpacity, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';

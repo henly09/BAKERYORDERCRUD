@@ -195,7 +195,7 @@ export default function BreadInsert()
         options={[
             'Bagels', 'Pretzel','Breadsticks', 'Croissant',
             'White Bread','Wheat Bread','Whole Grain Bread','Rye Bread']}
-        defaultValue={"Ordered                                                                                        V"}
+        defaultValue={"Ordered                                                                              V"}
         animated
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={true}
@@ -241,7 +241,7 @@ export default function BreadInsert()
           fontSize: 14
       }}
         options={['Delivery','Pickup']}
-        defaultValue={"Type                                                                                              V"}
+        defaultValue={"Type                                                                                    V"}
         animated
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={true}
@@ -325,10 +325,9 @@ export default function BreadInsert()
 const styles=StyleSheet.create({
 
     ViewStyle:{
-        flex:1,
         padding: 10,
         marginTop:10,
-        top: '17%'
+        top: '14%'
     },
 
     txtStyle:{

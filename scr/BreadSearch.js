@@ -182,7 +182,8 @@ const styles=StyleSheet.create({
         borderBottomColor:'#ffffff',
         marginBottom: 5,
         backgroundColor: 'white',
-        padding: 10
+        padding: 10,
+        borderRadius: 5
     },
    
 
