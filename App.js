@@ -3,10 +3,12 @@
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
 import * as React from 'react';
-import { View, Text, Button, Image, ImageBackground,TouchableOpacity, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View, Text, Image, ImageBackground,TouchableOpacity, StyleSheet, TextInput } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import SideMenu from 'react-native-side-menu-updated';
 
 import BreadInsert from './scr/BreadInsert.js';
@@ -14,10 +16,10 @@ import BreadSearch from './scr/BreadSearch.js';
 import BreadDelete from './scr/BreadDelete.js';
 import BreadList from './scr/BreadList.js';
 import BreadAbout from './scr/BreadAbout';
+import HomeScreen from './scr/HomeScreen.js';
 
 import logo from './assets/logo.png';
 import cafe from './assets/cafe.gif';
-import bg2 from './assets/bg2.png';
 import menubg from './assets/menu.png';
 import home from './assets/home.png';
 import insert from './assets/insert.png';
@@ -26,103 +28,14 @@ import deleted from './assets/delete.png';
 import list from './assets/list.png';
 import about from './assets/about.png';
 
+import fb from './assets/fb.png';
+import google from './assets/google.png';
+import insta from './assets/insta.png';
+import twitter from './assets/twitter.png';
+
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-function HomeScreen({ navigation }) {
-
-  return (
-    <View>  
-     <ImageBackground 
-                source={bg2} 
-                resizeMode="cover" 
-                style={{
-                height: '100%',
-                width: '100%'
-     }}>
-    
-      <Text style={{
-        fontSize: 35,
-        fontFamily: 'sans-serif',
-        fontWeight: 'bold',
-        fontStyle: "italic",
-        position: 'absolute',
-        alignSelf:'center',
-        top: 300,
-        color: 'white',
-        textShadowColor:'#0c0d0e',
-        textShadowOffset:{width: 10, height: 10},
-        textShadowRadius:20,
-        textAlign: 'center',
-      }}> BAKERY {"\n"} ORDERING SYSTEM </Text>
-
-        <Text style={{
-        fontSize: 20,
-        fontFamily: 'sans-serif',
-        fontWeight: 'bold',
-        fontStyle: "italic",
-        position: 'absolute',
-        alignSelf:'center',
-        top: 395,
-        color: 'white',
-        textShadowColor:'#0c0d0e',
-        textShadowOffset:{width: 10, height: 10},
-        textShadowRadius:20,
-        textAlign: 'center'
-      }}> System Database for Delivery Management™ </Text>
-
-        <Image 
-         source= {logo}
-         style={{ 
-         height: 180,
-         width: 180,
-         position: 'absolute',
-         alignSelf:'center',
-         top: 100,
-         resizeMode: 'center',
-         }}/>
-
-      <View style={{ 
-        flexDirection: 'row', 
-        top: '120%', 
-        justifyContent: 'space-evenly',
-        }}>
-
-      <Button
-      color="#382624"
-        title={"Insert"}
-        onPress={() => navigation.navigate('Insert')}
-      />
-
-      <Button
-      color="#382624"
-        title={"Search"}
-        onPress={() => navigation.navigate('Search')}
-      />
-
-      <Button
-      color="#382624"
-        title={"Delete"}
-        onPress={() => navigation.navigate('Delete')}
-      />
-
-      <Button
-        color="#382624"
-        title={"Bread List"}
-        onPress={() => navigation.navigate('List')}
-      />
-
-      <Button
-        color="#382624"
-        title={"Menu"}
-        onPress={() => navigation.navigate('About')}
-      />
-    
-      </View>
-      </ImageBackground>
-      </View>
-      
-  );
-}
 
 function SideMenuBar(){
   const navigation = useNavigation();
@@ -232,10 +145,8 @@ function SideMenuBar(){
 );
 }
 
-export default function Bottomtabnav(){
-  
+function Bottomtabnav(){
   return(
-    <NavigationContainer>
     <SideMenu 
     openMenuOffset={180} 
     menu={<SideMenuBar/>} 
@@ -366,9 +277,104 @@ export default function Bottomtabnav(){
 
     </Tab.Navigator>
     </SideMenu>
-    </NavigationContainer>
   );
 }
+
+function LoginScreen({navigation}) {
+  
+  const user = 'henly09';
+  const pass = '09108076145145';
+  
+  const [loginuser, setLoginuser] = useState('');
+  const [loginpass, setLoginpass] = useState('');
+
+  onLogin = async() => {
+    if (user == loginuser && pass == loginpass){
+      alert("Login Successfully!");
+      console.log("user: "+loginuser +" "+"pass: "+loginpass);
+      navigation.navigate("HomeSecond");
+    }
+    else{
+      alert("Username or Password is Invalid!");
+      console.log("user: "+loginuser +" "+"pass: "+loginpass);
+    }
+  }
+    return (
+      <View style={{position: 'absolute', height: '100%',width: '100%'}}>  
+          <ImageBackground
+                  source={cafe} 
+                  resizeMode='cover' 
+                  style={{
+                  height: '100%',
+                  width: '100%',
+                  position: 'absolute',
+       }}/> 
+      
+        <Text style={styles.bakerytext}> BAKERY {"\n"} ORDERING SYSTEM </Text>
+  
+          <Text style={styles.sysdat}> System Database for Delivery Management™ </Text>
+  
+          <Image 
+           source= {logo}
+           style={styles.logo}/>
+  
+           <View style={{alignSelf: 'center', justifyContent: 'center', top: 400,justifyContent: 'space-evenly' }}>
+  
+           <TextInput
+                      placeholder={"Username:"}
+                      placeholderTextColor={"black"}
+                      style={styles.txtStyle}
+                      onChangeText={loginuser=>setLoginuser(loginuser)}
+                  />
+  
+            <TextInput
+                      placeholder={"Password:"}
+                      placeholderTextColor={"black"}
+                      style={styles.txtStyle}
+                      secureTextEntry={true}
+                      onChangeText={loginpass=>setLoginpass(loginpass)}
+                  />
+  
+           </View>
+  
+           <View style={{alignSelf: 'center', top: 420}}> 
+        
+           <TouchableOpacity onPress={onLogin}>
+             <Text style={styles.loginbutton}>LOGIN</Text>
+           </TouchableOpacity>
+           </View> 
+  
+           <View style={{ 
+          flexDirection: 'row', 
+          top: '110%', 
+          justifyContent: 'space-evenly',
+          }}>
+  
+          <Image source= {fb} style={styles.loginwith}/>
+  
+          <Image source= {google} style={styles.loginwith}/>
+  
+          <Image source= {insta} style={styles.loginwith}/>
+  
+          <Image source= {twitter} style={styles.loginwith}/>
+  
+          </View>
+  
+     
+        </View>
+    );
+  }
+
+export default function App() {
+    return(
+      <NavigationContainer>
+          <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown:false}}>
+            <Stack.Screen name="Home" component={LoginScreen}/>
+            <Stack.Screen name="HomeSecond" component={Bottomtabnav}/>
+          </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 
 const styles = StyleSheet.create({
   
@@ -379,7 +385,84 @@ const styles = StyleSheet.create({
     color:'white',
     width: '80%',
     paddingTop: 20
+  },
+
+  logo: { 
+    height: 180,
+    width: 180,
+    position: 'absolute',
+    alignSelf:'center',
+    top: 50,
+    resizeMode: 'center',
+    },
+
+  sysdat: {
+    fontSize: 20,
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold',
+    fontStyle: "italic",
+    position: 'absolute',
+    alignSelf:'center',
+    top: 325,
+    color: 'white',
+    textShadowColor:'#0c0d0e',
+    textShadowOffset:{width: 5, height: 5},
+    textShadowRadius:15,
+    textAlign: 'center'
+  },
+
+  bakerytext: {
+    fontSize: 35,
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold',
+    fontStyle: "italic",
+    position: 'absolute',
+    alignSelf:'center',
+    top: 235,
+    color: 'white',
+    textShadowColor:'#0c0d0e',
+    textShadowOffset:{width: 5, height: 5},
+    textShadowRadius:15,
+    textAlign: 'center',
+  },
+  
+  txtStyle: {
+    fontSize: 14,
+    backgroundColor: '#f3b344',
+    height: 45,
+    padding: 10,
+    width: 280,
+    marginBottom: 10,
+    borderBottomColor: 'white',
+    borderRadius: 10,
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold',
+    color: 'white'
+  },
+
+  loginbutton: {
+    fontSize: 14,
+    backgroundColor: '#db7444',
+    height: 45,
+    padding: 10,
+    width: 280,
+    marginBottom: 10,
+    borderBottomColor: 'white',
+    borderRadius: 20,
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: 'white'
+  },
+
+  loginwith: {
+    height: 55,
+    width: 55
   }
+  
+
+
+
   
   })
 

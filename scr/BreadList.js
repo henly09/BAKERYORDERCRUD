@@ -110,7 +110,7 @@ export default class BreadList extends Component {
          height: 100,
          width: 100,
          position: 'absolute',
-         left: 250,
+         left: 282,
          top:45,
          resizeMode: 'center',
          }}/>
