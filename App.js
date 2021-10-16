@@ -4,7 +4,7 @@
 // Gmail: monterahens@gmail.com 
 import * as React from 'react';
 import { useState } from 'react';
-import { View, Text, Image, ImageBackground,TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import { View, Text, Image, ImageBackground,TouchableOpacity, StyleSheet, TextInput, ToastAndroid } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
@@ -290,12 +290,12 @@ function LoginScreen({navigation}) {
 
   onLogin = async() => {
     if (user == loginuser && pass == loginpass){
-      alert("Login Successfully!");
+      ToastAndroid.show("Login Successfully!",ToastAndroid.SHORT);
       console.log("user: "+loginuser +" "+"pass: "+loginpass);
       navigation.navigate("HomeSecond");
     }
     else{
-      alert("Username or Password is Invalid!");
+      ToastAndroid.show("Username or Password is Invalid!",ToastAndroid.SHORT);
       console.log("user: "+loginuser +" "+"pass: "+loginpass);
     }
   }
