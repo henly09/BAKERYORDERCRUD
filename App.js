@@ -322,14 +322,14 @@ function LoginScreen({navigation}) {
   
            <TextInput
                       placeholder={"Username:"}
-                      placeholderTextColor={"black"}
+                      placeholderTextColor={"white"}
                       style={styles.txtStyle}
                       onChangeText={loginuser=>setLoginuser(loginuser)}
                   />
   
             <TextInput
                       placeholder={"Password:"}
-                      placeholderTextColor={"black"}
+                      placeholderTextColor={"white"}
                       style={styles.txtStyle}
                       secureTextEntry={true}
                       onChangeText={loginpass=>setLoginpass(loginpass)}
