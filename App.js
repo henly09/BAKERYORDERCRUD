@@ -51,7 +51,7 @@ function SideMenuBar(){
                 width: '100%'
      }}> 
      <ImageBackground
-                opacity={0.78} 
+                opacity={0.40} 
                 source={menubg} 
                 resizeMode="cover" 
                 style={{
@@ -506,8 +506,17 @@ function Slider({ navigation }) {
   }
 
    _renderItem = ({ item }) => {
+
+    const bg = [styles.slider,styles.slider1,styles.slider2];
+
+    var e;
+     
+    if ( item.title == 'SERVICE'){e=0;}
+    if ( item.title == 'OFFERS'){e=1;}
+    if ( item.title == 'CHILL'){e=2;}
+
     return (
-      <View style={styles.slider}>
+      <View style={bg[e]}>
         <Text style={styles.title}>{item.title}</Text>
               <Image style={styles.image} source={item.image} />
         <Text style={styles.text}>{item.text}</Text>
@@ -576,6 +585,20 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     backgroundColor: '#fcc464',
+    position: 'absolute'
+  },
+
+  slider1: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#e4bc7c',
+    position: 'absolute'
+  },
+
+  slider2: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#dc8c94',
     position: 'absolute'
   },
 
