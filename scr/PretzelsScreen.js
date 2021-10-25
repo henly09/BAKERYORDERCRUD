@@ -124,7 +124,7 @@ export default function PretzelsScreen() {
        borderWidth: 3,
        borderRadius: 13,
        fontStyle: 'italic',
-       left: 290,
+       left: 275,
        margin: 5,
        fontWeight: 'bold'
     },
