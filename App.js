@@ -489,14 +489,14 @@ function Slider({ navigation }) {
       key: 2,
       title: 'OFFERS',
       text: 'We offer authentic breads with authentic recipes',
-      image: require('./assets/cafe2.gif'),
+      image: require('./assets/breadloopgif.gif'),
       backgroundColor: '#ecd7b5'
     },
     {
       key: 3,
       title: 'CHILL',
       text: 'Order now and review us on Google Play Store.',
-      image: require('./assets/cafe3.gif'),
+      image: require('./assets/chill.gif'),
       backgroundColor: '#dc8e94'
     }
   ];
@@ -591,14 +591,14 @@ const styles = StyleSheet.create({
   slider1: {
     height: '100%',
     width: '100%',
-    backgroundColor: '#e4bc7c',
+    backgroundColor: 'white',
     position: 'absolute'
   },
 
   slider2: {
     height: '100%',
     width: '100%',
-    backgroundColor: '#dc8c94',
+    backgroundColor: '#ecc434',
     position: 'absolute'
   },
 
