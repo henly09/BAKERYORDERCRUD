@@ -154,7 +154,8 @@ function Bottomtabnav(){
     menu={<SideMenuBar/>} 
     bounceBackOnOverdraw={false}
     isOpen={false}
-    allowOverlayPressPropagation={true}>
+    allowOverlayPressPropagation={true}
+    edgeHitWidth={160}>
     <Tab.Navigator
     initialRouteName="HomeScreen"
       screenOptions={{
