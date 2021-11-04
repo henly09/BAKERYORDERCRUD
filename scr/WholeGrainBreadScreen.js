@@ -2,7 +2,6 @@ import * as React from 'react';
 import { View, 
   Text,  
   StyleSheet,
-  TouchableNativeFeedback, 
   Image,  
   SafeAreaView, 
   ImageBackground,

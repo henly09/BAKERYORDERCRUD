@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import bg2 from '../assets/bg2.png';
-import { StyleSheet,Button,Image, FlatList, Text, View, ActivityIndicator, TouchableOpacity, ImageBackground} from 'react-native';
+import { StyleSheet,Image, FlatList, Text, View, ActivityIndicator, TouchableOpacity, ImageBackground} from 'react-native';
 // Ownded and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com

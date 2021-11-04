@@ -1,4 +1,4 @@
-import React,{Component,useState} from 'react';
+import React,{useState} from 'react';
 import { View, TextInput, Button, StyleSheet, ImageBackground, Text,Platform } from 'react-native';
 import bg from '../assets/bg.jpg';
 import ModalDropdown from 'react-native-modal-dropdown';

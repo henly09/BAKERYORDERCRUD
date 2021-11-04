@@ -7,9 +7,6 @@ import {
     StyleSheet, 
     Text,
     View, 
-    SafeAreaView, 
-    FlatList, 
-    ActivityIndicator, 
     TextInput,
     Button,
     ImageBackground

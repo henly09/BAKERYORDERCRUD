@@ -2,11 +2,9 @@ import * as React from 'react';
 import { View, 
   Text,  
   StyleSheet, 
-  TouchableNativeFeedback, 
   Image,  
   SafeAreaView, 
   ImageBackground,
-  Alert,
 } from 'react-native';
 
 import whitebread from '../assets/bread2/whitebread.png';
