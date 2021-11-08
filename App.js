@@ -157,17 +157,17 @@ function Bottomtabnav(){
     isOpen={false}
     allowOverlayPressPropagation={true}
     edgeHitWidth={160}>
+      
     <Tab.Navigator
     initialRouteName="HomeScreen"
       screenOptions={{
         tabBarStyle: { 
           position: 'absolute',
           backgroundColor: '#925d32',
-          borderRadius: 10,
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 10,
           height: 65,
-          width: "98%",
-          left: 5,
-          bottom: 5
+          width: "100%",
         },
         tabBarShowLabel: false,
         showElevation: true,   
