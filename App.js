@@ -511,11 +511,11 @@ function Slider({ navigation }) {
     }
   ];
 
-  onCall = async() => {
+  const onCall = async() => {
     navigation.navigate('HomeSecond');
   }
 
-   _renderItem = ({ item }) => {
+  const _renderItem = ({ item }) => {
 
     const bg = [styles.slider,styles.slider1,styles.slider2];
 
@@ -534,7 +534,7 @@ function Slider({ navigation }) {
     );
   }
 
-  _renderNextButton = () => {
+  const _renderNextButton = () => {
     return (
       <View style={styles.buttonCircle}>
         <Icon
@@ -545,7 +545,7 @@ function Slider({ navigation }) {
       </View>
     );
   };
-  _renderDoneButton = () => {
+  const _renderDoneButton = () => {
     return (
       <View style={styles.buttonCircle}>
         <Icon
