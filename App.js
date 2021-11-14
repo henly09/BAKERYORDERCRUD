@@ -3,7 +3,7 @@
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
 import * as React from 'react';
-import { useState } from 'react';
+import { useState,Component } from 'react';
 import { View, Text, Image, ImageBackground,TouchableOpacity, StyleSheet, TextInput, ToastAndroid, Button } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -35,6 +35,7 @@ import fb from './assets/fb.png';
 import google from './assets/google.png';
 import insta from './assets/insta.png';
 import twitter from './assets/twitter.png';
+import { render } from 'react-dom';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -380,7 +381,7 @@ function LoginScreen({navigation}) {
 export default function App() {
     return(
       <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown:false}}>
+          <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown:false}}>
             <Stack.Screen name="Home" component={LoginScreen}/>
             <Stack.Screen name="HomeHalf" component={Slider}/>
             <Stack.Screen name="HomeSecond" component={Bottomtabnav}/>
@@ -569,6 +570,7 @@ function Slider({ navigation }) {
     />
   );
 }
+
 
 const styles = StyleSheet.create({
   
