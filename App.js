@@ -3,7 +3,7 @@
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
 import * as React from 'react';
-import { useState,Component } from 'react';
+import { useState } from 'react';
 import { View, Text, Image, ImageBackground,TouchableOpacity, StyleSheet, TextInput, ToastAndroid, Button } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -35,7 +35,6 @@ import fb from './assets/fb.png';
 import google from './assets/google.png';
 import insta from './assets/insta.png';
 import twitter from './assets/twitter.png';
-import { render } from 'react-dom';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
