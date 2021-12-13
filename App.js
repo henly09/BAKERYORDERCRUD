@@ -150,13 +150,15 @@ function SideMenuBar(){
 
 function Bottomtabnav(){
   return(
+    
     <SideMenu 
     openMenuOffset={180} 
     menu={<SideMenuBar/>} 
     bounceBackOnOverdraw={false}
-    isOpen={false}
     allowOverlayPressPropagation={true}
-    edgeHitWidth={160}>
+    edgeHitWidth={160}
+    autoClosing={true}
+    >
       
     <Tab.Navigator
     initialRouteName="HomeScreen"
@@ -711,7 +713,8 @@ const styles = StyleSheet.create({
   loginwith: {
     height: 55,
     width: 55
-  }
+  },
+
   
 
 
