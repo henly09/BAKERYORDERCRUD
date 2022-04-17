@@ -4,7 +4,7 @@
 // Gmail: monterahens@gmail.com 
 import * as React from 'react';
 import { useState } from 'react';
-import { View, Text, Image, ImageBackground,TouchableOpacity, StyleSheet, TextInput, ToastAndroid, Button } from 'react-native';
+import { ScrollView,View, Text, Image, ImageBackground,TouchableOpacity, StyleSheet, TextInput, ToastAndroid, Button } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
@@ -483,7 +483,6 @@ function HomeScreen({ navigation }) {
         </View>
         </ImageBackground>
         </View>
-        
     );
   }
 
