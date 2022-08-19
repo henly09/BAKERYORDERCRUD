@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import bg2 from '../assets/bg2.png';
 import { StyleSheet,Image, FlatList, Text, View, ActivityIndicator, TouchableOpacity, ImageBackground} from 'react-native';
-// Ownded and Created by : Montera, John Henly A.
+// In App.js in a new project
+// Owned and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
-// Gmail: monterahens@gmail.com
+// Gmail: monterahens@gmail.com 
 import bagels from '../assets/bread1/bagels.png';
 import breadsticks from '../assets/bread1/breadsticks.png';
 import croissant from '../assets/bread1/croissant.png';

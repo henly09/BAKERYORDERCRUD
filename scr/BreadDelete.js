@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// Ownded and Created by : Montera, John Henly A.
+// In App.js in a new project
+// Owned and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
 import { 

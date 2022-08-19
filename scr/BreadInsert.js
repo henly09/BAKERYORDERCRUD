@@ -4,7 +4,8 @@ import bg from '../assets/bg.jpg';
 import ModalDropdown from 'react-native-modal-dropdown';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-// Ownded and Created by : Montera, John Henly A.
+// In App.js in a new project
+// Owned and Created by : Montera, John Henly A.
 // FB: fb.com/mhax.ter
 // Gmail: monterahens@gmail.com 
 
