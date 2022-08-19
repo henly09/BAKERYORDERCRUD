@@ -15,6 +15,7 @@
     "@react-navigation/native": "^6.0.4",
     "@react-navigation/native-stack": "^6.2.2",
     "@react-navigation/stack": "^6.0.7",
+    "caniuse-lite": "^1.0.30001378",
     "expo": "~42.0.1",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
