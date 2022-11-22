@@ -219,7 +219,6 @@ export default class BreadSearch extends Component {
             onChangeText={address=>this.setState({address})}
             />
         
-
             <View style={styles.containerbutton}>
 
             <Button
@@ -230,11 +229,6 @@ export default class BreadSearch extends Component {
             />
 
             </View>
-
-
-
-
-
         </View>
         </ImageBackground>
         </View>
