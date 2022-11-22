@@ -74,7 +74,7 @@ export default class BreadList extends Component {
      if ( thumbnail == 'Rye Bread'){e=4;}
 
        return (
-        <TouchableOpacity onPress={() => alert("Customer's Name: "+item.fullname+"\nOrderID#:"+item.ID+"\Total: $"+item.price+"\nOrder: "+item.ordered+"\nType: "+item.Type_)}>
+        <TouchableOpacity onPress={() => alert("Customer's Name: "+item.fullname+"\nOrderID#:"+item.ID+"\nTotal: $"+item.price+"\nOrder: "+item.ordered+"\nType: "+item.Type_)}>
             <View>
             <View style={styles.item}>
                 <Text style={styles.text}>OrderID#: {item.ID},Total: ${item.price},{"\n"}Order: {item.ordered},Type: {item.Type_}</Text>
